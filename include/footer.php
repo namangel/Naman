@@ -8,7 +8,7 @@
             margin:0 0;
             padding:0;
         }
-        .a1:hover{
+        a:hover{
             font-size: 16px;
             color: black;
         }

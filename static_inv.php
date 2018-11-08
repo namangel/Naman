@@ -257,10 +257,10 @@
     <a class="a2" href="#">Terms of Service </a> | <a href="#" class="a2"> Privacy </a> | <a class="a2" href="#" > License </a>
   </center>
     </div> -->
+    <?php require "include/footer.php"?>
   </div>
 
 </div>
-<?php require "include/footer.php"?>
 <script>
   window.onscroll = function() {myFunction()};
 

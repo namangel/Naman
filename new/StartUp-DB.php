@@ -268,7 +268,7 @@
 	#exe, #doc, #finance{
 		display: none;
 	}
-
+	
 	#summary{
 		display: block;
 	}
@@ -325,7 +325,7 @@
 		<div class="topnav">
 			<div class="nop"> </div>
 			<div class="topx">
-      			<center><a href="index.php"><img src="img/logo3.png" style="height:50px;width:135px; margin: 5px;"></a></center>
+      			<center><a href="index.html"><img src="img/logo3.png" style="height:50px;width:135px; margin: 5px;"></a></center>
    			</div>
 			<div class="nofull"> </div>
 			<div class="toplout">
@@ -333,7 +333,7 @@
 			<div class="toplout">
 				<br>
 				<center>
-				 <a href="index.php">LOGOUT</a>
+				 <a href="index.html">LOGOUT</a>
 				</center>
 			</div>
 			<div class="nop"> </div>
@@ -418,7 +418,6 @@
 					<hr>
 				</li>
 			</div>
-
 			<div id="overlay">
 				<div class="compbasics">
 					<form class="profform" method="post" action='StartUp-DB.php' enctype="multipart/form-data">
@@ -500,6 +499,7 @@
 				<div><button style="background-color: white; outline-color: tranparent; border-width: 0;" onclick="executive()">Executive summary</button></div>
 				<div><button style="background-color: white; outline-color: tranparent; border-width: 0;" onclick="finance()">Financials</button></div>
 				<div><button style="background-color: white; outline-color: tranparent; border-width: 0;" onclick="document()">Documents</button></div>
+			
 			</div>
 			<div id="summary">
 				<div class="summaryip"><button class="pencil" onclick="olpon()"><i class="fa fa-pencil"></i></button>
@@ -698,314 +698,315 @@
 					</div>
 				</div>
 			</div>
-
-			<div id="finance">
-		        <center><i class="fa fa-lock icsize">Only Gust users who have been granted access can view this content.</i></center>
-		        <div class="cfr"><b>Current Funding Round (USD)</b><br><br>
-		        	Detail your stage of funding, the capital you're seeking and your pre-money valuation.<br><br><br>
-		        	<button class="button2">Open Funding Round</button>
-		        </div>
-				<div class="fh"><b>Funding History (USD)<button class="pencil"><i class="fa fa-pencil "></i></button></b><br><br>
-					Please add any previous funding rounds.
-		        </div>
-		        <div class="af"><b>Annual Financials (USD)<button class="pencil"><i class="fa fa-pencil"></i></button>
-					<pre class="circlei"><b>i</b></pre></b><br><br>
-					<div class="p2"></div>
-			            <p>Enter your financials for this year and last year, as well as projections for the following three years.</p>
-			            <p>Investors like to compare and evaluate financial performance over this timeframe, so do your best to complete it.</p>
-		            </div>
-		            <div class="tables"><pre>Annual Revenue Run Rate --                        Monthly Burn Rate --<pre>
-		            <table>
-		            <tr><td>         </td>
-		            </tr>
-		            <tr>
-		            <td>Revenue Driver</td>
-		            </tr>
-		            <tr>
-		            <td>Revenue $</td>
-		            </tr>
-		            <tr>
-		            <td>Expenditure $</td>
-		            </tr>
-		            <tr>
-		            <td>Profit (Loss) $</td>
-		            </tr>
-		            </table>
-		            </div>
-					</div>
-			</div>
-
-			<div id="doc">
-		        <div id="manage">
-		            <button class="adddoc">Add Document</button>
-		            <h3>Business Plan</h3>
-		            <p>What is your long term business plan? Preferred file types: .pdf, .doc, .xls</p>
-		        </div>
-		        <div id="manage">
-		            <button class="adddoc">Add Document</button>
-		            <h3>Financial Projections</h3>
-		            <p>Provide an overview of where your financials are headed within the next 5 years. Preferred file types: .pdf, .doc, .xls</p>
-		        </div>
-		        <div id="manage">
-		            <button class="adddoc">Add Document</button>
-		            <h3>Supplemental Documents</h3>
-		            <p>Upload any documents to support your company.</p>
-		        </div>
-			</div>
-
-			<div id="exe">
-				<div id="overly">
-					<div id="manageform">
-										<div class="form">
-											<div class="formhead">
-												<button onClick="ovoff()" class="close"><i class="fa fa-close"></i></button>
-												<h3>Management Team</h3>
-												<p>Who are the members of your management team and how will their experience aid in your success?
-												</p>
-											</div>
-											<div class="formtext">
-												<form>
-													<div class="formtext"><textarea autofocus rows="10" cols="75"name="manageform"></textarea></div>
-													<div class="formtext submits">
-														<input type="submit" value="Cancel" name="cancel" class="cancel">
-														<input type="submit" value="Save" name="save" class="save">
-													</div>
-												</form>
-											</div>
-										</div>
-					</div>
-				</div>
-
-		        <div id="manage">
-			        <button onClick="ovon()" class="pencil"><i class="fa fa-pencil"></i></button>
-			        <h3>Management Team</h3>
-			        Who are the members of your management team and how will their experience aid in your success?
-		        </div>
-
-		        <div id="cust" >
-			        <div id="manageform">
-		                <div class="form">
-		                    <div class="formhead">
-		                        <button onClick="custoff()" class="close"><i class="fa fa-close"></i></button>
-		                    <h3>Customer Problem</h3>
-							What customer problem does your product and/or service solve?
-		                    </div>
-		                    <div class="formtext">
-		                        <form>
-		                            <div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
-		                            <div class="formtext submits">
-		                                <input type="submit" value="Cancel" name="cancel" class="cancel">
-		                                <input type="submit" value="Save" name="save" class="save">
-		                            </div>
-		                        </form>
-		                    </div>
-		                </div>
-			        </div>
-		        </div>
-
-		        <div id="manage">
-			        <button onClick="custon()" class="pencil"><i class="fa fa-pencil"></i></button>
-			        <h3>Customer Problem</h3>
-			        What customer problem does your product and/or service solve?
-		        </div>
-
-				<div id="product">
-			        <div id="manageform">
-			            <div class="form">
-			                <div class="formhead">
-			                    <button onClick="productoff()" class="close"><i class="fa fa-close"></i></button>
-			                <h3>Products & Services</h3>
-								Describe the product or service that you will sell and how it solves the customer problem, listing the main value proposition for each product/service.
-			                </div>
-			                <div class="formtext">
-			                    <form>
-			                        <div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
-			                        <div class="formtext submits">
-			                            <input type="submit" value="Cancel" name="cancel" class="cancel">
-			                            <input type="submit" value="Save" name="save" class="save">
-			                        </div>
-			                    </form>
-			                </div>
-			            </div>
-			        </div>
-		        </div>
-
-		        <div id="manage">
-			        <button onClick="producton()" class="pencil"><i class="fa fa-pencil"></i></button>
-			        <h3>Products & Services</h3>
-			        Describe the product or service that you will sell and how it solves the customer problem, listing the main value proposition for each product/service.
-		        </div>
-
-				<div id="target">
-			        <div id="manageform">
-			            <div class="form">
-			                <div class="formhead">
-			                    <button onClick="targetoff()" class="close"><i class="fa fa-close"></i></button>
-			                <h3>Target Market</h3>
-							<p>Define the important geographic, demographic, and/or psychographic characteristics of the market within which your customer segments exist.</p>
-			                </div>
-			                <div class="formtext">
-			                    <form>
-			                        <div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
-			                        <div class="formtext submits">
-			                            <input type="submit" value="Cancel" name="cancel" class="cancel">
-			                            <input type="submit" value="Save" name="save" class="save">
-			                        </div>
-			                    </form>
-			                </div>
-			            </div>
-			        </div>
-		        </div>
-
-		        <div id="manage">
-			        <button onClick="targeton()" class="pencil"><i class="fa fa-pencil"></i></button>
-			        <h3>Target Market</h3>
-			        <p>Define the important geographic, demographic, and/or psychographic characteristics of the market within which your customer segments exist.</p>
-		        </div>
-
-				<div id="bussi">
-			        <div id="manageform">
-		                <div class="form">
-		                    <div class="formhead">
-		                        <button onClick="bussioff()" class="close"><i class="fa fa-close"></i></button>
-		                    <h3>Business Model</h3>
-							<p>What strategy will you employ to build, deliver, and retain company value (e.g., profits)?</p>
-		                    </div>
-		                    <div class="formtext">
-		                        <form>
-		                            <div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
-		                            <div class="formtext submits">
-		                                <input type="submit" value="Cancel" name="cancel" class="cancel">
-		                                <input type="submit" value="Save" name="save" class="save">
-		                            </div>
-		                        </form>
-		                    </div>
-		                </div>
-			        </div>
-		        </div>
-
-		        <div id="manage">
-			        <button onClick="bussion()" class="pencil"><i class="fa fa-pencil"></i></button>
-			        <h3>Business Model</h3>
-			        <p>What strategy will you employ to build, deliver, and retain company value (e.g., profits)?</p>
-		        </div>
-
-				<div id="segs">
-			        <div id="manageform">
-		                <div class="form">
-		                    <div class="formhead">
-		                        <button onClick="segsoff()" class="close"><i class="fa fa-close"></i></button>
-		                    <h3>Customer Segments</h3>
-							<p>Outline your targeted customer segments. These are the specific subsets of your target market that you will focus on to gain traction.</p>
-		                    </div>
-		                    <div class="formtext">
-		                        <form>
-		                            <div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
-		                            <div class="formtext submits">
-		                                <input type="submit" value="Cancel" name="cancel" class="cancel">
-		                                <input type="submit" value="Save" name="save" class="save">
-		                            </div>
-		                        </form>
-		                    </div>
-		                </div>
-			        </div>
-		        </div>
-
-		        <div id="manage">
-			        <button onClick="segson()" class="pencil"><i class="fa fa-pencil"></i></button>
-			        <h3>Customer Segments</h3>
-			        Outline your targeted customer segments. These are the specific subsets of your target market that you will focus on to gain traction.
-		        </div>
-
-			    <div id="sales">
-			        <div id="manageform">
-		                <div class="form">
-		                    <div class="formhead">
-		                        <button onClick="salesoff()" class="close"><i class="fa fa-close"></i></button>
-		                    <h3>Sales & Marketing Strategy</h3>
-							<p>What is your customer acquisition and retention strategy? Detail how you will promote, sell and create customer loyalty for your products and services.</p>
-		                    </div>
-		                    <div class="formtext">
-		                        <form>
-		                            <div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
-		                            <div class="formtext submits">
-		                                <input type="submit" value="Cancel" name="cancel" class="cancel">
-		                                <input type="submit" value="Save" name="save" class="save">
-		                            </div>
-		                        </form>
-		                    </div>
-		                </div>
-			        </div>
-		        </div>
-
-		        <div id="manage">
-			        <button onClick="saleson()" class="pencil"><i class="fa fa-pencil"></i></button>
-			        <h3>Sales & Marketing Strategy</h3>
-			        <p>What is your customer acquisition and retention strategy? Detail how you will promote, sell and create customer loyalty for your products and services.</p>
-		        </div>
-
-				<div id="manage">
-			        <button onClick="segson()" class="pencil"><i class="fa fa-pencil"></i></button>
-			        <h3>Customer Segments</h3>
-			        <p>Outline your targeted customer segments. These are the specific subsets of your target market that you will focus on to gain traction.</p>
-		        </div>
-
-		        <div id="comp">
-			        <div id="manageform">
-		                <div class="form">
-		                    <div class="formhead">
-		                        <button onClick="compoff()" class="close"><i class="fa fa-close"></i></button>
-		                    <h3>Competitors</h3>
-							<p>Describe the competitive landscape and your competitors� strengths and weaknesses. If direct competitors don�t exist, describe the existing alternatives.</p>
-		                    </div>
-		                    <div class="formtext">
-		                        <form>
-		                            <div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
-		                            <div class="formtext submits">
-		                                <input type="submit" value="Cancel" name="cancel" class="cancel">
-		                                <input type="submit" value="Save" name="save" class="save">
-		                            </div>
-		                        </form>
-		                    </div>
-		                </div>
-			        </div>
-		        </div>
-
-		        <div id="manage">
-			        <button onClick="compon()" class="pencil"><i class="fa fa-pencil"></i></button>
-			        <h3>Competitors</h3>
-			        <p>Describe the competitive landscape and your competitors� strengths and weaknesses. If direct competitors don�t exist, describe the existing alternatives.</p>
-		        </div>
-				<div id="adv" onClick="advoff()">
-			        <div id="manageform">
-			            <div class="form">
-			                <div class="formhead">
-			                    <button onClick="advoff()" class="close"><i class="fa fa-close"></i></button>
-			                <h3>Competitive Advantage</h3>
-							<p>What is your company�s competitive or unfair advantage? This can include patents, first mover advantage, unique expertise, or proprietary processes/technology.</p>
-			                </div>
-			                <div class="formtext">
-			                    <form>
-			                        <div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
-			                        <div class="formtext submits">
-			                            <input type="submit" value="Cancel" name="cancel" class="cancel">
-			                            <input type="submit" value="Save" name="save" class="save">
-			                        </div>
-			                    </form>
-			                </div>
-			            </div>
-			        </div>
-		        </div>
-
-		        <div id="manage">
-			        <button onClick="advon()" class="pencil"><i class="fa fa-pencil"></i></button>
-			        <h3>Competitive Advantage</h3>
-			        <p>What is your company�s competitive or unfair advantage? This can include patents, first mover advantage, unique expertise, or proprietary processes/technology.</p
-		        </div>
-			</div>
 		</div>
 
+		<div id="finance">
+			<center><i class="fa fa-lock icsize">Only Gust users who have been granted access can view this content.</i></center>
+			<div class="cfr"><b>Current Funding Round (USD)</b><br><br>
+				Detail your stage of funding, the capital you're seeking and your pre-money valuation.<br><br><br>
+				<button class="button2">Open Funding Round</button>
+			</div>
+			<div class="fh"><b>Funding History (USD)<button class="pencil"><i class="fa fa-pencil "></i></button></b><br><br>
+				Please add any previous funding rounds.
+			</div>
+			<div class="af"><b>Annual Financials (USD)<button class="pencil"><i class="fa fa-pencil"></i></button>
+				<pre class="circlei"><b>i</b></pre></b><br><br>
+				<div class="p2"></div>
+				<p>Enter your financials for this year and last year, as well as projections for the following three years.</p>
+				<p>Investors like to compare and evaluate financial performance over this timeframe, so do your best to complete it.</p>
+				</div>
+				<div class="tables"><pre>Annual Revenue Run Rate --                        Monthly Burn Rate --<pre>
+				<table>
+				<tr>
+				<td>         </td>
+				</tr>
+				<tr>
+				<td>Revenue Driver</td>
+				</tr>
+				<tr>
+				<td>Revenue $</td>
+				</tr>
+				<tr>
+				<td>Expenditure $</td>
+				</tr>
+				<tr>
+				<td>Profit (Loss) $</td>
+				</tr>
+				</table>  
+				</div>
+				</div> 
+		</div>               
 
-	<?php require "include/footer.php"?>
+
+		<div id="doc">   
+						<div id="manage">
+							<button class="adddoc">Add Document</button>
+							<h3>Business Plan</h3>
+							<p>What is your long term business plan? Preferred file types: .pdf, .doc, .xls</p>
+						</div>
+						<div id="manage">
+							<button class="adddoc">Add Document</button>    
+							<h3>Financial Projections</h3>
+							<p>Provide an overview of where your financials are headed within the next 5 years. Preferred file types: .pdf, .doc, .xls</p>
+						</div>
+						<div id="manage">
+							<button class="adddoc">Add Document</button>
+							<h3>Supplemental Documents</h3>
+							
+							<p>Upload any documents to support your company.</p>
+						</div>
+		</div>
+					
+
+		<div id="exe">   
+						<div id="overly">
+							<div id="manageform">
+												<div class="form">
+													<div class="formhead">
+														<button onClick="ovoff()" class="close"><i class="fa fa-close"></i></button>
+														<h3>Management Team</h3>
+														<p>Who are the members of your management team and how will their experience aid in your success?
+														</p>
+													</div>
+													<div class="formtext"> 
+														<form>
+															<div class="formtext"><textarea autofocus rows="10" cols="75"name="manageform"></textarea></div>
+															<div class="formtext submits">
+																<input type="submit" value="Cancel" name="cancel" class="cancel">
+																<input type="submit" value="Save" name="save" class="save">
+															</div>
+														</form>
+													</div>
+												</div>
+							</div>
+						</div>
+							
+							<div id="manage">
+							<button onClick="ovon()" class="pencil"><i class="fa fa-pencil"></i></button>
+							<h3>Management Team</h3>
+							Who are the members of your management team and how will their experience aid in your success?
+							
+							
+							</div>
+							<div id="cust" >
+							<div id="manageform">
+												<div class="form">
+													<div class="formhead">
+														<button onClick="custoff()" class="close"><i class="fa fa-close"></i></button>
+													<h3>Customer Problem</h3>
+							What customer problem does your product and/or service solve?
+													</div>
+													<div class="formtext"> 
+														<form>
+															<div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
+															<div class="formtext submits">
+																<input type="submit" value="Cancel" name="cancel" class="cancel">
+																<input type="submit" value="Save" name="save" class="save">
+															</div>
+														</form>
+													</div>
+												</div>
+							</div>
+							</div>
+							
+							<div id="manage">
+							<button onClick="custon()" class="pencil"><i class="fa fa-pencil"></i></button>
+							<h3>Customer Problem</h3>
+							What customer problem does your product and/or service solve?
+							
+							</div>
+							<div id="product">
+							<div id="manageform">
+												<div class="form">
+													<div class="formhead">
+														<button onClick="productoff()" class="close"><i class="fa fa-close"></i></button>
+													<h3>Products & Services</h3>
+							Describe the product or service that you will sell and how it solves the customer problem, listing the main value proposition for each product/service.
+													</div>
+													<div class="formtext"> 
+														<form>
+															<div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
+															<div class="formtext submits">
+																<input type="submit" value="Cancel" name="cancel" class="cancel">
+																<input type="submit" value="Save" name="save" class="save">
+															</div>
+														</form>
+													</div>
+												</div>
+							</div>
+							</div>
+							
+							<div id="manage">
+							<button onClick="producton()" class="pencil"><i class="fa fa-pencil"></i></button>
+							<h3>Products & Services</h3>
+							Describe the product or service that you will sell and how it solves the customer problem, listing the main value proposition for each product/service.
+							
+							</div>
+							<div id="target">
+							<div id="manageform">
+												<div class="form">
+													<div class="formhead">
+														<button onClick="targetoff()" class="close"><i class="fa fa-close"></i></button>
+													<h3>Target Market</h3>
+							Define the important geographic, demographic, and/or psychographic characteristics of the market within which your customer segments exist.
+													</div>
+													<div class="formtext"> 
+														<form>
+															<div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
+															<div class="formtext submits">
+																<input type="submit" value="Cancel" name="cancel" class="cancel">
+																<input type="submit" value="Save" name="save" class="save">
+															</div>
+														</form>
+													</div>
+												</div>
+							</div>
+							</div>
+							
+							<div id="manage">
+							<button onClick="targeton()" class="pencil"><i class="fa fa-pencil"></i></button>
+							<h3>Target Market</h3>
+							Define the important geographic, demographic, and/or psychographic characteristics of the market within which your customer segments exist.
+							</div>
+							<div id="bussi">
+							<div id="manageform">
+												<div class="form">
+													<div class="formhead">
+														<button onClick="bussioff()" class="close"><i class="fa fa-close"></i></button>
+													<h3>Business Model</h3>
+							What strategy will you employ to build, deliver, and retain company value (e.g., profits)?
+													</div>
+													<div class="formtext"> 
+														<form>
+															<div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
+															<div class="formtext submits">
+																<input type="submit" value="Cancel" name="cancel" class="cancel">
+																<input type="submit" value="Save" name="save" class="save">
+															</div>
+														</form>
+													</div>
+												</div>
+							</div>
+							</div>
+							
+							<div id="manage">
+							<button onClick="bussion()" class="pencil"><i class="fa fa-pencil"></i></button>
+							<h3>Business Model</h3>
+							What strategy will you employ to build, deliver, and retain company value (e.g., profits)?
+							</div>
+							<div id="segs">
+							<div id="manageform">
+												<div class="form">
+													<div class="formhead">
+														<button onClick="segsoff()" class="close"><i class="fa fa-close"></i></button>
+													<h3>Customer Segments</h3>
+							Outline your targeted customer segments. These are the specific subsets of your target market that you will focus on to gain traction.
+													</div>
+													<div class="formtext"> 
+														<form>
+															<div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
+															<div class="formtext submits">
+																<input type="submit" value="Cancel" name="cancel" class="cancel">
+																<input type="submit" value="Save" name="save" class="save">
+															</div>
+														</form>
+													</div>
+												</div>
+							</div>
+							</div>
+							
+							<div id="manage">
+							<button onClick="segson()" class="pencil"><i class="fa fa-pencil"></i></button>
+							<h3>Customer Segments</h3>
+							Outline your targeted customer segments. These are the specific subsets of your target market that you will focus on to gain traction.
+							</div>
+							<div id="sales">
+							<div id="manageform">
+												<div class="form">
+													<div class="formhead">
+														<button onClick="salesoff()" class="close"><i class="fa fa-close"></i></button>
+													<h3>Sales & Marketing Strategy</h3>
+							What is your customer acquisition and retention strategy? Detail how you will promote, sell and create customer loyalty for your products and services.
+													</div>
+													<div class="formtext"> 
+														<form>
+															<div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
+															<div class="formtext submits">
+																<input type="submit" value="Cancel" name="cancel" class="cancel">
+																<input type="submit" value="Save" name="save" class="save">
+															</div>
+														</form>
+													</div>
+												</div>
+							</div>
+							</div>
+							
+
+
+
+							<div id="manage">
+							<button onClick="saleson()" class="pencil"><i class="fa fa-pencil"></i></button>
+							<h3>Sales & Marketing Strategy</h3>
+							What is your customer acquisition and retention strategy? Detail how you will promote, sell and create customer loyalty for your products and services.
+							</div>
+							<div id="manage">
+							<button onClick="segson()" class="pencil"><i class="fa fa-pencil"></i></button>
+							<h3>Customer Segments</h3>
+							Outline your targeted customer segments. These are the specific subsets of your target market that you will focus on to gain traction.
+							</div>
+							<div id="comp">
+							<div id="manageform">
+												<div class="form">
+													<div class="formhead">
+														<button onClick="compoff()" class="close"><i class="fa fa-close"></i></button>
+													<h3>Competitors</h3>
+							Describe the competitive landscape and your competitors� strengths and weaknesses. If direct competitors don�t exist, describe the existing alternatives.
+													</div>
+													<div class="formtext"> 
+														<form>
+															<div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
+															<div class="formtext submits">
+																<input type="submit" value="Cancel" name="cancel" class="cancel">
+																<input type="submit" value="Save" name="save" class="save">
+															</div>
+														</form>
+													</div>
+												</div>
+							</div>
+							</div>
+							
+							<div id="manage">
+							<button onClick="compon()" class="pencil"><i class="fa fa-pencil"></i></button>
+							<h3>Competitors</h3>
+							Describe the competitive landscape and your competitors� strengths and weaknesses. If direct competitors don�t exist, describe the existing alternatives.
+							</div><div id="adv" onClick="advoff()">
+							<div id="manageform">
+												<div class="form">
+													<div class="formhead">
+														<button onClick="advoff()" class="close"><i class="fa fa-close"></i></button>
+													<h3>Competitive Advantage</h3>
+							What is your company�s competitive or unfair advantage? This can include patents, first mover advantage, unique expertise, or proprietary processes/technology.
+													</div>
+													<div class="formtext"> 
+														<form>
+															<div class="formtext"><textarea autofocus rows="10" cols="75"name="custform"></textarea></div>
+															<div class="formtext submits">
+																<input type="submit" value="Cancel" name="cancel" class="cancel">
+																<input type="submit" value="Save" name="save" class="save">
+															</div>
+														</form>
+													</div>
+												</div>
+							</div>
+							</div>
+							
+							<div id="manage">
+							<button onClick="advon()" class="pencil"><i class="fa fa-pencil"></i></button>
+							<h3>Competitive Advantage</h3>
+							What is your company�s competitive or unfair advantage? This can include patents, first mover advantage, unique expertise, or proprietary processes/technology.
+							</div>
+		</div>
+	</div>
+
 </body>
 </html>
