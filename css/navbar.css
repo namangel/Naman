@@ -1,0 +1,118 @@
+.topnav {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns:repeat(24,1fr);
+  /* position:absolute;*/
+  overflow: hidden;
+  background-color: #0A2B40;
+}
+
+* {
+box-sizing: border-box;
+font-family: Palanquin
+}
+
+.topnav a:hover {
+  /* background-color: rgba(178, 220, 255,0.5); */
+  color: white;
+}
+
+.nop{
+  grid-column: span 1;
+}
+
+.nofull{
+  grid-column: span 13;
+}
+
+.topfor{
+  grid-column: span 3;
+}
+
+.topf{
+  grid-column: span 2;
+}
+
+.topfor:hover {
+  background-color: rgba(178, 220, 255,0.5);
+}
+
+.top2{
+  grid-column: span 3;
+
+}
+
+.top3{
+  grid-column: span 3;
+}
+
+.top3:hover {
+  background-color: rgba(178, 220, 255,0.5);
+}
+
+.toplout{
+  grid-column: span 3;
+}
+
+.toplout a{
+  text-decoration:none;
+  color:white;
+}
+
+.toplout:hover {
+  opacity:0.6;
+}
+
+.topx{
+  grid-column: span 3;
+}
+
+.cs1 {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+/* BUTTON */
+.button {
+  border-radius: 4px;
+  background-color: #B2DCFF ;
+  border: none;
+  color:black ;
+  text-align: center;
+  font-size: 18px;
+  padding: 9px;
+  width: 109px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
