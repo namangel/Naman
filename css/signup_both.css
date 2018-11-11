@@ -1,6 +1,5 @@
 body{
 		margin:0;
-		font-family:Palanquin;
 	}
   .grid-container {
     display: grid;
@@ -61,11 +60,6 @@ body{
 	font-size: 1.5vw;
 	height:500px;
 }
-.foot{
-  text-align: center;
-  font-size: 18px;
-  background-color:#f9f9f9;
-}
 .a1{
   text-decoration: none;
   color:#51a0d6;
@@ -73,14 +67,6 @@ body{
 .a1:hover{
   text-decoration: underline;
   color:#51a0d6;
-}
-.a2{
-	color:gray;
-	text-decoration: none;
-}
-.a2:hover{
-	color:black;
-	text-decoration: none;
 }
 i:hover{
   opacity: 0.7;

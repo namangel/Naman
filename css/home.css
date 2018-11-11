@@ -1,7 +1,6 @@
 body{
   padding:0px;
   margin:0px;
-  font-family:Palanquin;
 }
 .grid-container {
   display: grid;
@@ -235,9 +234,6 @@ body{
 .a2:hover{
 	color:black;
 	text-decoration: none;
-}
-i:hover{
-  opacity: 0.7;
 }
 
 .navitem1  a:hover {

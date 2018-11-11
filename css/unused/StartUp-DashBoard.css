@@ -1,7 +1,14 @@
+body {
+  margin:0px;
+  padding:0px;
+}
+
+
 .container{
     display: grid;
     grid-template-rows: 2fr 8fr 3fr;
     grid-gap: 1em;
+    height: 1000px;
 }
 .main{
     display: grid;
@@ -14,33 +21,17 @@
 .main > div{
     background: white;
 }
-/* 
-
-.overview{
-    grid-column:1; 
-    grid-row: 1/2;
-    text-align: justify;
-}
-#overview a{
-    text-decoration: none;
-    color:#6962fe;
-}
- */
 
 .backimg{
-    grid-column:1/3; 
+    grid-column:1/3;
     grid-row: 2/4;
 }
 .backimg .uploadbg{
-    /*visibility: hidden;*/
-    background-color:#0b7df7;
+    background-color:#10ac84;
     text-align: center;
     color: white;
     padding: 4px;
 }
-/*.backimg:hover .uploadbg{
-    visibility: visible;
-}*/
 
 
 .sideprof,.social,.contact{
@@ -53,6 +44,7 @@
 }
 .sideprof{
     grid-row:3/6;
+    background-color: red;
 }
 .social{
     grid-row:6/7;
@@ -83,31 +75,33 @@
     width: 90%;
     margin: 10px;
 }
-#overlay,#sumformov,#socialformov,#overly,#product,#cust,#target,#bussi,#segs,#sales,#comp,#adv,#contactform,#profteam,#addteam,#adv,#inv{
+
+
+#overlay,#sumformov,#socialformov,#olpformov,#adv,#contactform,#profteam,#addteam,#inv,#reqformov, #overly,#cust, #product,#target, #bussi, #segs, #sales, #comp{
     position: fixed;
     overflow-y: scroll;
     display: none;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color:rgba(0,0,0,0.5);;
+    background-color:rgba(0,0,0,0.5);
     z-index: 2;
     cursor: pointer;
 }
-#manage{border:1px dashed #B8B8B8;margin:2em auto 2em auto; padding: 20px;}
 
 .nav{
     grid-column: 2;
     grid-row: 3;
     border-bottom: 1px solid gray;
 }
+
 .nav >div{
     float:left;
     margin: 1em;
-    margin-top:0px; 
+    margin-top:0px;
     margin-bottom: 0px;
     padding: 10px;;
 }
@@ -120,28 +114,29 @@
 }
 .nav a:hover{
     color:black;
-    text-decoration:underline #0b7df7;
+    text-decoration:underline #10ac84;
 }
 .video{
-    margin-top:20px; 
+    margin-top:20px;
 }
 
-.summary{
+#summary, #exe, #finance, #doc{
     grid-column: 2;
     grid-row: 4/9;
 }
+
 .icsize{
     font-size:11pt;
     color: gray;
 }
-.summary .pen,.pencil,.add{
+.pencil,.add{
     float:right;
 }
 .form{
     display: grid;
-    grid-template-rows:1fr 2fr; 
-    justify-items: center;
-    align-items: center;
+    grid-template-rows:1fr 2fr;
+    /* justify-items: center; */
+    /* align-items: center; */
     width: 500px;
     margin: 100px auto;
     background-color: #eee;
@@ -150,7 +145,7 @@
 .formtext {
     grid-row:2;
     max-width: 100%;
-    height: 100%; 
+    height: auto;
     width: 400px;
 }
 .formhead {
@@ -163,18 +158,15 @@
 .socialic{
     margin-bottom: 5px;
 }
-.save,.b1,.adddoc{
-    background-color: #0b7df7;
+.save,.b1{
+    background-color: #10ac84;
     color: white;
-    border:2px solid #0b7df7;
+    border:2px solid #10ac84;
     padding: 10px;
     margin-left: 10px;
 }
-.adddoc{
-    float: right;
-}
 .cancel,.b2,.pencil,.add{
-    border:2px solid #0b7df7;
+    border:2px solid #10ac84;
     background-color: white;
     padding: 10px;
 }
@@ -182,17 +174,13 @@
     background-color:#eee;
 }
 .save:hover,.b1:hover{
-    background-color: #4d97f7;
-}
-
-.footer{
-    background: #eee;
+    opacity:0.6;
 }
 
 
 .compbasics{
-    display: grid; 
-    justify-items: center; 
+    display: grid;
+    justify-items: center;
     padding: 2em;
 }
 .profform{
@@ -208,7 +196,4 @@
 .compbasics input,select,textarea{
     size: 255pt;
     width: 100%;
-}
-.compbasics butn{
-    float: right;
 }

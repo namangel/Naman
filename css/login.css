@@ -1,18 +1,14 @@
-* {
+
+body {
+  background: #F8F8FF;
   margin: 0px;
   padding: 0px;
-  font-family: palanquin;
-}
-body {
-  font-size: 120%;
-  background: #F8F8FF;
 }
 
 .header {
   width: 30%;
   margin: 50px auto 0px;
   color: white;
-  /* background: #56cc96; */
   text-align: center;
   border: 1px solid #B0C4DE;
   border-bottom: none;
@@ -65,9 +61,4 @@ form, .content {
   background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
-}
-
-.foot{
-    padding: 50px;
-    vertical-align: bottom;
 }

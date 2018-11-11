@@ -9,37 +9,8 @@
 
     </head>
     <body>
+      <?php require 'include/header/staticst.php'; ?>
       <div class="container">
-        <div class="topnav">
-          <div class="nop"> </div>
-          <div class="top3">
-            <center><a href="index.php"><img src="img/logo3.png" style="height:50px;width:135px; margin: 5px;"></a></center>
-         </div>
-          <div class="nop"> </div>
-          <div class="nop"> </div>
-          <div class="nop"> </div>
-          <div class="nop"> </div>
-          <div class="nop"> </div>
-          <div class="nop"> </div>
-          <div class="topf">
-            <!-- <a href="#home" class="cs1"><center>For Startups</center></a> -->
-          </div>
-          <div class="topf">
-            <!-- <a href="#home" class="cs1"><center>For Investors</center></a> -->
-          </div>
-          <div class="nop"> </div>
-          <div class="nop"> </div>
-          <div class="top2">
-                <button class="button" onclick="location.href='register_st.php'"><span >Sign Up</span></button>
-            </div>
-              <!-- <div class="nop"> </div> -->
-          <div class="top2">
-             <button class="button" onclick="location.href='login_st.php'"><span >Sign In</span></button>
-
-          </div>
-          <div class="nop"> </div>
-        </div>
-
         <div class="ss">
           <center>
             <br>
@@ -135,6 +106,7 @@
               </div>
             </div> -->
         </div>
+        <?php require "include/footer/footer.php"?>
         <script>
         window.onscroll = function() {myFunction()};
 
@@ -149,6 +121,5 @@
           }
         }
         </script>
-        <?php require "include/footer.php"?>
     </body>
 </html>

@@ -1,10 +1,6 @@
 .container{
   display: grid;
   grid-template-columns: repeat(12,1fr);
-  grid-template-rows: minmax(60px,auto);
-}
-*{
-  font-family: Palanquin;
 }
 body{
   margin: 0px;
@@ -24,10 +20,6 @@ font{
   font-size: 20px;
 }
 
-.headfoot{
-  grid-column: span 12;
-  background-color: black;
-}
 .no{
   grid-column: span 12;
 }

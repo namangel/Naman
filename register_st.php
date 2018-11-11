@@ -7,14 +7,14 @@
   <link rel="stylesheet" type="text/css" href="css/navbar.css">
 </head>
 <body>
-
-  <div class="topnav">
+<div>
+  <!-- <div class="topnav">
     <div class="nop"> </div>
     <div class="top3">
       <center><a href="index.php"><img src="img/logo3.png" style="height:50px;width:135px; margin: 5px;"></a></center>
    </div>
-  </div>
-
+  </div> -->
+<?php require 'include/header/register.php'; ?>
   <div class="header" style="background :#00b894;">
   	<h2>Register - Startup</h2>
   </div>
@@ -429,25 +429,8 @@
   </form>
 </div>
 <div class="no5">.</div>
+</div>
 
-<!-- <div style="grid-column: span 4">
-  <div class="foot" style="background-color:#ecf0f1;">
-    <center>
-    <br>
-    <font style="font-size:15px;font-family:Courier;">
-  <pre>
-  <a class="a1" href="#">Company Info</a>  <a href="#" class="a1">For Startups</a>  <a href="#" class="a1">For Investors</a>  <a href="#" class="a1"> Support </a> <a href="#" class="a1"> Contact Us</a>
-  </pre>
-
-  <i class="fa fa-facebook-official" style="font-size:48px;color:#9cc5e0"></i>
-  <i class="fa fa-twitter-square" style="font-size:49px;color:#9cc5e0"></i>
-  <br><br>
-  <pre>
-  <a class="a2" href="#">Terms of Service </a> | <a href="#" class="a2"> Privacy </a> | <a class="a2" href="#" > License </a>
-      </font>
-</center>
-  </div>
-</div> -->
-<?php require "include/footer.php"?>
+<?php require "include/footer/footer.php"?>
 </body>
 </html>

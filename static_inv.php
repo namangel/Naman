@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-  <div class="topnav">
+  <!-- <div class="topnav">
     <div class="nop"> </div>
     <div class="top3">
       <center><a href="index.php"><img src="img/logo3.png" style="height:50px;width:135px; margin: 5px;"></a></center>
@@ -34,7 +34,9 @@
        <button class="button" onclick="location.href='login_inv.php'"><span >Sign In</span></button>
     </div>
     <div class="nop"> </div>
-  </div>
+  </div> -->
+
+  <?php require 'include/header/staticinv.php'; ?>
 
   <!-- <div class="start1" style="background-image: url('img/Industry.jpg')" > -->
   <div class="start1" style=" background-color: #00cec9;" >
@@ -241,26 +243,10 @@
   <div class="no2"></div>
   <div class="no5">.</div>
 
-  <!-- <div style="grid-column: span 12">
-    <div class="foot" style="background-color:#ecf0f1;">
-      <center>
-      <br>
-      <font style="font-size:20px;font-family:Courier;">
-    <pre>
-    <a class="a1" href="#">Company Info</a>  <a href="#" class="a1">For Startups</a>  <a href="#" class="a1">For Investors</a>  <a href="#" class="a1"> Support </a> <a href="#" class="a1"> Contact Us</a>
-    </pre>
-      </font>
-    <i class="fa fa-facebook-official" style="font-size:48px;color:#9cc5e0"></i>
-    <i class="fa fa-twitter-square" style="font-size:49px;color:#9cc5e0"></i>
-    <br>
-    <pre>
-    <a class="a2" href="#">Terms of Service </a> | <a href="#" class="a2"> Privacy </a> | <a class="a2" href="#" > License </a>
-  </center>
-    </div> -->
-    <?php require "include/footer.php"?>
   </div>
 
 </div>
+<?php require "include/footer/footer.php"?>
 <script>
   window.onscroll = function() {myFunction()};
 

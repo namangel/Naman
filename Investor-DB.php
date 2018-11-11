@@ -620,6 +620,6 @@
 			</div>
 		</div>
 	</div>
-	<?php require "include/footer.php"?>
+	<?php require "include/footer/footer.php"?>
 </body>
 </html>

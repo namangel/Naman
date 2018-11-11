@@ -108,7 +108,7 @@
 			mysqli_query($db, $q);
 		}
 
-		header('location: StartUp-DB.php');
+		header('location: StartUp-DB-Overview.php');
 	}
 
 	if(isset($_POST["sfsave"])){
@@ -131,7 +131,7 @@
 			$q = "UPDATE st_overview set FBLink='$sffacebook' where Username='$u';";
 			mysqli_query($db, $q);
 		}
-		header('location: StartUp-DB.php');
+		header('location: StartUp-DB-Overview.php');
 	}
 
 	if(isset($_POST["cfsave"])){
@@ -148,7 +148,7 @@
 			$q = "UPDATE user_st set Email='$cfemail' where Username='$u';";
 			mysqli_query($db, $q);
 		}
-		header('location: StartUp-DB.php');
+		header('location: StartUp-DB-Overview.php');
 	}
 
 	if(isset($_POST['sumsave'])){
@@ -156,7 +156,7 @@
 		$q = "UPDATE st_overview set Summary='$summaryform' where Username='$u';";
 		mysqli_query($db, $q);
 
-		header('location: StartUp-DB.php');
+		header('location: StartUp-DB-Overview.php');
 	}
 
 	if(isset($_POST['casave'])){
@@ -173,7 +173,7 @@
 			mysqli_query($db, $q);
 		}
 
-		header('location: StartUp-DB.php');
+		header('location: StartUp-DB-Overview.php');
 	}
 
 	if(isset($_POST['pisave'])){
@@ -190,7 +190,7 @@
 			mysqli_query($db, $q);
 		}
 
-		header('location: StartUp-DB.php');
+		header('location: StartUp-DB-Overview.php');
 	}
 
 	if(isset($_POST['olpsave'])){
@@ -201,7 +201,7 @@
 			mysqli_query($db, $q);
 		}
 
-		header('location: StartUp-DB.php');
+		header('location: StartUp-DB-Overview.php');
 	}
 
 
@@ -250,207 +250,202 @@
 		$_SESSION['search'] = $rid[4];
 		header('location: Investor-Profile.php');
 	}
-
 ?>
 <html>
     <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css\companyprof.css" type="text/css">
         <script src="js\profform.js"></script>
     </head>
     <body>
+			<?php require 'include/header/postlogin.php'; ?>
         <div class="container">
             <div class="main">
-                    <div class="backimg">
-                            <div class="bg">
-                                <div class="uploadbg">
-                                    <?= $Stname?>
-                                </div>
+            		<div class="backimg">
+                        <font style="font-size:30px;"><?= $Stname?></font>
+                </div>
+                <div class="sideprof">
+                    <div class="upload">
+                        <div class="pen">
+                            <button class="pencil" onclick="on()"><i class="fa fa-pencil"></i></button>
+                        </div>
+                        <div><?= '<img src="data:image/jpeg;base64,'.base64_encode($Logo).'"/>';?></div>
+                    </div>
+                    <ul class="proflist">
+                        <li class="item">Name <span class="value"><?= $Stname?></span></li>
+                        <li style="list-style: none; display: inline">
+                            <hr>
+                        </li>
+                        <li class="item">Stage <span class="value"><?= $Stage?></span></li>
+                        <li style="list-style: none; display: inline">
+                            <hr>
+                        </li>
+                        <li class="item">Industry <span class="value"><?= $Type?></span></li>
+                        <li style="list-style: none; display: inline">
+                            <hr>
+                        </li>
+                        <li class="item">Location <span class="value"><?= $City.", ".$State.", ".$Country?></span></li>
+                        <li style="list-style: none; display: inline">
+                            <hr>
+                        </li>
+                        <li class="item">Founded <span class="value"><?= $DOF?></span></li>
+                        <li style="list-style: none; display: inline">
+                            <hr>
+                        </li>
+                        <li class="item">Employees <span class="value"><?= $EmpNum?></span></li>
+                        <li style="list-style: none; display: inline">
+                            <hr>
+                        </li>
+                        <li class="item">Incorporation Type <span class="value"><?= $IncType?></span></li>
+                        <li style="list-style: none; display: inline">
+                            <hr>
+                        </li>
+                        <li class="item">Website <span class="value"><?= $Website?></span></li>
+                        <li style="list-style: none; display: inline">
+                            <hr>
+                        </li>
+                        <li><button class="b1" name="requestbtn" onclick="reqon();showreqs(<?= $reqnum ?>)"><?=$transbtn."  ( ".$reqnum." ) " ?></button></li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <button class="pencil" onclick="socialon()"><i class="fa fa-pencil"></i></button>
+                    <h3>Social presence</h3>
+                    <li class="item" style="list-style: none; display: inline">LinkedIn :  <span class="value"><?= $LinkedInLink?></span></li>
+                    <li style="list-style: none; display: inline">
+                        <hr>
+                    </li>
+                    <li class="item" style="list-style: none; display: inline">Twitter : <span class="value"><?= $TwitterLink?></span></li>
+                    <li style="list-style: none; display: inline">
+                        <hr>
+                    </li>
+                    <li class="item" style="list-style: none; display: inline">Facebook : <span class="value"><?= $FBLink?></span></li>
+                    <li style="list-style: none; display: inline">
+                        <hr>
+                    </li>
+                </div>
+                <div class="contact">
+                    <button class="pencil" onclick="contacton()"><i class="fa fa-pencil"></i></button>
+                    <h3>Contact</h3>
+                    <li class="item" style="list-style: none; display: inline">Phone :  <span class="value"><?= $Phone?></span></li>
+                    <li style="list-style: none; display: inline">
+                        <hr>
+                    </li>
+                    <li class="item" style="list-style: none; display: inline">Email ID : <span class="value"><?= $Email?></span></li>
+                    <li style="list-style: none; display: inline">
+                        <hr>
+                    </li>
+                </div>
+                <div id="overlay">
+                    <div class="compbasics">
+                        <form class="profform" method="post" action='StartUp-DB-Overview.php' enctype="multipart/form-data">
+                            <button class="close" onclick="off()"><i class="fa fa-close"></i></button>
+                            <div class="i1">
+                                <h2>Company Basics</h2>
+                                <p>Add your company name, elevator pitch, and other basic information about your company.</p>
+                                <hr>
                             </div>
-                        </div>
-                        <div class="sideprof">
-                            <div class="upload">
-                                <div class="pen">
-                                    <button class="pencil" onclick="on()"><i class="fa fa-pencil"></i></button>
-                                </div>
-                                <div><?= '<img src="data:image/jpeg;base64,'.base64_encode($Logo).'"/>';?></div>
+                            <div class="i2">
+                                <label for="cblogo">Company Logo</label><br>
+                                <input name="cblogo" type="file">
                             </div>
-                            <ul class="proflist">
-                                <li class="item">Name <span class="value"><?= $Stname?></span></li>
-                                <li style="list-style: none; display: inline">
-                                    <hr>
-                                </li>
-                                <li class="item">Stage <span class="value"><?= $Stage?></span></li>
-                                <li style="list-style: none; display: inline">
-                                    <hr>
-                                </li>
-                                <li class="item">Industry <span class="value"><?= $Type?></span></li>
-                                <li style="list-style: none; display: inline">
-                                    <hr>
-                                </li>
-                                <li class="item">Location <span class="value"><?= $City.", ".$State.", ".$Country?></span></li>
-                                <li style="list-style: none; display: inline">
-                                    <hr>
-                                </li>
-                                <li class="item">Founded <span class="value"><?= $DOF?></span></li>
-                                <li style="list-style: none; display: inline">
-                                    <hr>
-                                </li>
-                                <li class="item">Employees <span class="value"><?= $EmpNum?></span></li>
-                                <li style="list-style: none; display: inline">
-                                    <hr>
-                                </li>
-                                <li class="item">Incorporation Type <span class="value"><?= $IncType?></span></li>
-                                <li style="list-style: none; display: inline">
-                                    <hr>
-                                </li>
-                                <li class="item">Website <span class="value"><?= $Website?></span></li>
-                                <li style="list-style: none; display: inline">
-                                    <hr>
-                                </li>
-                                <li><button class="sidebutn b1" name="requestbtn" onclick="reqon();showreqs(<?= $reqnum ?>)"><?=$transbtn."  ( ".$reqnum." ) " ?></button></li>
-                            </ul>
-                        </div>
-                        <div class="social">
-                            <button class="pencil" onclick="socialon()"><i class="fa fa-pencil"></i></button>
-                            <h3>Social presence</h3>
-                            <li class="item" style="list-style: none; display: inline">LinkedIn :  <span class="value"><?= $LinkedInLink?></span></li>
-                            <li style="list-style: none; display: inline">
-                                <hr>
-                            </li>
-                            <li class="item" style="list-style: none; display: inline">Twitter : <span class="value"><?= $TwitterLink?></span></li>
-                            <li style="list-style: none; display: inline">
-                                <hr>
-                            </li>
-                            <li class="item" style="list-style: none; display: inline">Facebook : <span class="value"><?= $FBLink?></span></li>
-                            <li style="list-style: none; display: inline">
-                                <hr>
-                            </li>
-                        </div>
-                        <div class="contact">
-                            <button class="pencil" onclick="contacton()"><i class="fa fa-pencil"></i></button>
-                            <h3>Contact</h3>
-                            <li class="item" style="list-style: none; display: inline">Phone :  <span class="value"><?= $Phone?></span></li>
-                            <li style="list-style: none; display: inline">
-                                <hr>
-                            </li>
-                            <li class="item" style="list-style: none; display: inline">Email ID : <span class="value"><?= $Email?></span></li>
-                            <li style="list-style: none; display: inline">
-                                <hr>
-                            </li>
-                        </div>
-                        <div id="overlay">
-                            <div class="compbasics">
-                                <form class="profform" method="post" action='StartUp-DB.php' enctype="multipart/form-data">
-                                    <button class="close" onclick="off()"><i class="fa fa-close"></i></button>
-                                    <div class="i1">
-                                        <h2>Company Basics</h2>
-                                        <p>Add your company name, elevator pitch, and other basic information about your company.</p>
-                                        <hr>
-                                    </div>
-                                    <div class="i2">
-                                        <label for="cblogo">Company Logo</label><br>
-                                        <input name="cblogo" type="file">
-                                    </div>
-                                    <div class="i2">
-                                        <label for="name">Company Name</label><br>
-                                        <input name="cbname" type="text" placeholder="<?= $Stname?>">
-                                    </div>
-                                    <div class="i4">
-                                        <label for="stage">Company Stage</label><br>
-                                        <select name="cbstage" placeholder="<?= $Stage?>">
-                                            <option>Select Stage</option>
-                                            <option>Concept Only</option>
-                                            <option>Product in Development</option>
-                                            <option>Prototype ready</option>
-                                            <option>Full Product Ready</option>
-                                            <option>$500K in TTM Revenue</option>
-                                            <option>$1M in TTM Revenue</option>
-                                            <option>$5M in TTM Revenue</option>
-                                            <option>$10M in TTM Revenue</option>
-                                            <option>$20M in TTM Revenue</option>
-                                            <option>$50M in TTM Revenue</option>
-                                            <option>$50M+ in TTM Revenue</option>
-                                        </select>
-                                    </div>
-                                    <div class="i5">
-                                        <label for="cbcity">City</label><br>
-                                        <input name="cbcity" type="text"placeholder="<?= $City?>">
-                                    </div>
-                                    <div class="i5">
-                                        <label for="cbstate">State</label><br>
-                                        <input name="cbstate" type="text" placeholder="<?= $State?>">
-                                    </div>
-                                    <div class="i5">
-                                        <label for="cbcountry">Country</label><br>
-                                        <input name="cbcountry" type="text" placeholder="<?= $Country?>">
-                                    </div>
-                                    <div class="i7">
-                                        <label for="cbdate">Founding Date</label><br>
-                                        <input name="cbdate" type="text" placeholder="<?= $DOF?>" onfocus="(this.type='date')">
-                                    </div>
-                                    <div class="i8">
-                                        <label for="cbempnum">Number of Employees</label><br>
-                                        <input name="cbempnum" type="number" placeholder="<?= $EmpNum?>">
-                                    </div>
-                                    <div class="i3">
-                                        <label for="inc">Incorporation Type</label><br>
-                                        <select name="cbinc" placeholder="<?= $IncType?>">
-                                            <option><?= $IncType?></option>
-                                            <option>Not Incorporated</option>
-                                            <option>C-corp</option>
-                                            <option>S-corp</option>
-                                            <option>B-corp</option>
-                                            <option>LLC</option>
-                                            <option>Other</option>
-                                        </select>
-                                    </div>
-                                    <div class="i9">
-                                        <label for="cbweb">Company Website</label><br>
-                                        <input name="cbweb" type="text" placeholder="<?= $Website?>">
-                                    </div>
-                                    <div class="butn">
-                                        <button class="cancel" onclick="off()">Cancel</button> <button class="save" name="cbsave">Save</button>
-                                    </div>
-                                </form>
+                            <div class="i2">
+                                <label for="name">Company Name</label><br>
+                                <input name="cbname" type="text" placeholder="<?= $Stname?>">
                             </div>
-                        </div>
-                        <div class="nav">
-                            <div><a href="StartUp-DB.php">Overview</a></div>
-                            <div><a href="exe.php">Executive summary</a></div>
-                            <div><a href="finance.php">Financials</a></div>
-                            <div><a href="doc.php">Documents</a></div>
-                        
-                        </div>
+                            <div class="i4">
+                                <label for="stage">Company Stage</label><br>
+                                <select name="cbstage" placeholder="<?= $Stage?>">
+                                    <option>Select Stage</option>
+                                    <option>Concept Only</option>
+                                    <option>Product in Development</option>
+                                    <option>Prototype ready</option>
+                                    <option>Full Product Ready</option>
+                                    <option>$500K in TTM Revenue</option>
+                                    <option>$1M in TTM Revenue</option>
+                                    <option>$5M in TTM Revenue</option>
+                                    <option>$10M in TTM Revenue</option>
+                                    <option>$20M in TTM Revenue</option>
+                                    <option>$50M in TTM Revenue</option>
+                                    <option>$50M+ in TTM Revenue</option>
+                                </select>
+                            </div>
+                            <div class="i5">
+                                <label for="cbcity">City</label><br>
+                                <input name="cbcity" type="text"placeholder="<?= $City?>">
+                            </div>
+                            <div class="i5">
+                                <label for="cbstate">State</label><br>
+                                <input name="cbstate" type="text" placeholder="<?= $State?>">
+                            </div>
+                            <div class="i5">
+                                <label for="cbcountry">Country</label><br>
+                                <input name="cbcountry" type="text" placeholder="<?= $Country?>">
+                            </div>
+                            <div class="i7">
+                                <label for="cbdate">Founding Date</label><br>
+                                <input name="cbdate" type="text" placeholder="<?= $DOF?>" onfocus="(this.type='date')">
+                            </div>
+                            <div class="i8">
+                                <label for="cbempnum">Number of Employees</label><br>
+                                <input name="cbempnum" type="number" placeholder="<?= $EmpNum?>">
+                            </div>
+                            <div class="i3">
+                                <label for="inc">Incorporation Type</label><br>
+                                <select name="cbinc" placeholder="<?= $IncType?>">
+                                    <option><?= $IncType?></option>
+                                    <option>Not Incorporated</option>
+                                    <option>C-corp</option>
+                                    <option>S-corp</option>
+                                    <option>B-corp</option>
+                                    <option>LLC</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="i9">
+                                <label for="cbweb">Company Website</label><br>
+                                <input name="cbweb" type="text" placeholder="<?= $Website?>">
+                            </div>
+                            <div class="butn">
+                                <button class="cancel" onclick="off()">Cancel</button> <button class="save" name="cbsave">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="nav">
+                    <div><a href="StartUp-DB-Overview.php" style="color:black;">Overview</a></div>
+                    <div><a href="StartUp-DB-Exec.php">Executive summary</a></div>
+                    <div><a href="StartUp-DB-Finance.php">Financials</a></div>
+                    <div><a href="StartUp-DB-Doc.php">Documents</a></div>
+                </div>
                 <div class="summary">
-                    <div class="summaryip">
+                    <div class="databox">
                         <button onclick="summon()" class="pencil"><i class="fa fa-pencil"></i></button>
                         <h3>Company Summary</h3>
                         <p>Tell the world who you are and what makes your company special.</p>
-                        <img src="images\Capture.png">
+                        <img src="img\Capture.png">
                     </div>
-                    <div class="video">
+                    <div class="databox" style="padding:10px;">
                         <label>Increase the impact of your profile by uploading a short pitch</label>
                         <br>
                         <input type="file">
                     </div>
-                    <div class="team">
-                        <button onclick="teamon()" class="pencil"><i class="fa fa-pencil"></i></button>
+                    <div class="databox">
+                        <!-- <button onclick="teamon()" class="pencil"><i class="fa fa-pencil"></i></button> -->
                         <button onclick="addteamon()" class="add"><i class="fa fa-plus"></i></button>
                         <h4>Team</h4>
-                        <img src="images\prof.png">
+                        <img src="img\prof.png">
                         <hr>
                     </div>
-                    <div class="adv">
+                    <div class="databox">
                         <button onclick="advon()" class="add"><i class="fa fa-plus"></i></button>
                         <h4>Advisors</h4>
-                        <img src="images\prof.png">
+                        <img src="img\prof.png">
                         <hr>
                     </div>
-                    <div class="inv">
+                    <div class="databox">
                         <button onclick="invon()" class="add"><i class="fa fa-plus"></i></button>
                         <h4>Previous Investors</h4>
-                        <img src="images\prof.png">
+                        <img src="img\prof.png">
                         <hr>
                     </div>
                 </div>
@@ -461,7 +456,7 @@
                             <h3>Comapany Summary</h3>
                             <p>Add an overview to help investors evaluate your startup. You might like to include your business model, structure and products/services.</p>
                         </div>
-                        <div class="formtext"> 
+                        <div class="formtext">
                             <form>
                                 <div class="formtext"><textarea rows="10" cols="150" name="summmaryform"></textarea></div>
                                 <div class="formtext submits">
@@ -556,7 +551,7 @@
                                 <p>Your team is one of the most influential factors driving investor interest. If your team’s information is incomplete, you could be limiting your investment potential.</p>
                                 <p class="icsize">Remember to split equity before applying for funding. Divide ownership fairly and easily with our free Co-founder Equity Split tool.</p>
                             </div>
-                            <div class="formtext"> 
+                            <div class="formtext">
                                 <form>
                                     <div class="formtext">
                                         <label>Name</label><br>
@@ -585,7 +580,7 @@
                                 <h3>Add a Company Advisor</h3>
                                 <p class="icsize">Please provide the name and email address of your company advisor. Once they have confirmed their role, they'll gain access to your private profile. View our privacy policy</p>
                             </div>
-                            <div class="formtext"> 
+                            <div class="formtext">
                                 <form>
                                     <div class="formtext">
                                         <label>Name</label><br>
@@ -608,7 +603,7 @@
                                 <h3>Add a Previous Investor</h3>
                                 <p class="icsize">Please provide the name and email address of a previous investor. Once they have confirmed their role, they'll gain access to your private profile. View our privacy policy</p>
                             </div>
-                            <div class="formtext"> 
+                            <div class="formtext">
                                 <form>
                                     <div class="formtext">
                                         <label>Name</label><br>
@@ -625,11 +620,7 @@
                         </div>
                 </div>
             </div>
-            
-            
-            <!-- <div class="footer">
-                footer
-            </div> -->
         </div>
+		<?php require "include/footer/footer.php" ?>
     </body>
 </html>

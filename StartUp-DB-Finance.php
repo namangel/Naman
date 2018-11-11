@@ -250,24 +250,20 @@
 		$_SESSION['search'] = $rid[4];
 		header('location: Investor-Profile.php');
 	}
-
 ?>
 <html>
     <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css\companyprof.css" type="text/css">
         <link rel="stylesheet" href="css\financial.css" type="text/css">
         <script src="js\profform.js"></script>
     </head>
     <body>
+			<?php require 'include/header/postlogin.php'; ?>
         <div class="container">
             <div class="main">
                 <div class="backimg">
-                    <div class="bg">
-                        <div class="uploadbg">
-                            <?= $Stname?>
-                        </div>
-                    </div>
+                    <font style="font-size:30px;"><?= $Stname?></font>
                 </div>
                 <div class="sideprof">
                     <div class="upload">
@@ -309,7 +305,7 @@
                         <li style="list-style: none; display: inline">
                             <hr>
                         </li>
-                        <li><button class="sidebutn b1" name="requestbtn" onclick="reqon();showreqs(<?= $reqnum ?>)"><?=$transbtn."  ( ".$reqnum." ) " ?></button></li>
+                        <li><button class="b1" name="requestbtn" onclick="reqon();showreqs(<?= $reqnum ?>)"><?=$transbtn."  ( ".$reqnum." ) " ?></button></li>
                     </ul>
                 </div>
                 <div class="social">
@@ -416,94 +412,99 @@
                         </form>
                     </div>
                 </div>
-                <div class="nav">
-                <div><a href="StartUp-DB.php">Overview</a></div>
-				<div><a href="exe.php">Executive summary</a></div>
-				<div><a href="finance.php">Financials</a></div>
-				<div><a href="doc.php">Documents</a></div>
-			
-                </div>
-                <div id="socialformov">
-				<div class="form">
-					<div class="formhead">
-						<button class="close" onclick="socialoff()"><i class="fa fa-close"></i></button>
-						<h3>Social Presence</h3>
-						<p>Add your company's social media links.</p>
-					</div>
-					<div class="formtext">
-						<form method="post">
-							<div class="socialic">
-								<i class="fa fa-linkedin"></i><input size="30" type="text" name="sflinkedin">
-							</div>
-							<div class="socialic">
-								<i class="fa fa-twitter"></i><input size="30" type="text" name="sftwitter">
-							</div>
-							<div class="socialic">
-								<i class="fa fa-facebook"></i><input size="30" type="text" name="sffacebook">
-							</div><br>
-							<div class="formtext submits">
-								<input class="cancel" name="cancel" type="submit" value="Cancel"> <input class="save" name="sfsave" type="submit" value="Save">
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-			<div id="contactform">
-				<form class="form" method="post">
-					<div class="formhead">
-						<button class="close" onclick="contactoff()"><i class="fa fa-close"></i></button>
-						<h3>Contact Information</h3>
-						<p>Provide contact information for your company.</p>
-					</div>
-					<div class="formtext">
-						<label for="cfphone">Phone Number</label><br>
-						<input name="cfphone" size="40" type="text"><br>
-						<label for="cfemail">Email</label><br>
-						<input name="cfemail" size="40" type="email"><br>
-						<br>
-						<div class="formtext submits">
-							<input class="cancel" name="cancel" type="submit" value="Cancel"> <input class="save" name="cfsave" type="submit" value="Save">
-						</div>
-					</div>
-				</form>
-			</div>
-                <div class="finance">
-                        <center><i class="fa fa-lock icsize">Only Gust users who have been granted access can view this content.</i></center>
-                        <div class="cfr"><b>Current Funding Round (USD)</b><br><br>
-                          Detail your stage of funding, the capital you're seeking and your pre-money valuation.<br><br><br>
-                          <button class="button2">Open Funding Round</button>
-                        </div>
-                        <div class="fh"><b>Funding History (USD)<button class="pencil"><i class="fa fa-pencil "></i></button></b><br><br>
-
-                          Please add any previous funding rounds.
-                        </div>
-                        <div class="af"><b>Annual Financials (USD)<button class="pencil"><i class="fa fa-pencil"></i></button>
-                            <pre class="circlei"><b>i</b></pre></b><br><br><div class="p2">
-                          </div>
-                          <p>Enter your financials for this year and last year, as well as projections for the following three years.</p>
-                          <p>Investors like to compare and evaluate financial performance over this timeframe, so do your best to complete it.</p>
-                        </div>
-                        <div class="tables"><pre>Annual Revenue Run Rate --                        Monthly Burn Rate --<pre>
-                            <table>
-                              <tr>
-                                <td>         </td>
-                              </tr>
-                              <tr>
-                                <td>Revenue Driver</td>
-                              </tr>
-                              <tr>
-                                <td>Revenue $</td>
-                              </tr>
-                              <tr>
-                                <td>Expenditure $</td>
-                              </tr>
-                              <tr>
-                                <td>Profit (Loss) $</td>
-                              </tr>
-                            </table>  
-                        </div>
-                </div>                    
+								<div class="nav">
+									<div><a href="StartUp-DB-Overview.php">Overview</a></div>
+									<div><a href="StartUp-DB-Exec.php">Executive summary</a></div>
+									<div><a href="StartUp-DB-Finance.php" style="color:black;">Financials</a></div>
+									<div><a href="StartUp-DB-Doc.php">Documents</a></div>
+								</div>
+								<div id="socialformov">
+											<div class="form">
+												<div class="formhead">
+													<button class="close" onclick="socialoff()"><i class="fa fa-close"></i></button>
+													<h3>Social Presence</h3>
+													<p>Add your company's social media links.</p>
+												</div>
+												<div class="formtext">
+													<form method="post">
+														<div class="socialic">
+															<i class="fa fa-linkedin"></i><input size="30" type="text" name="sflinkedin">
+														</div>
+														<div class="socialic">
+															<i class="fa fa-twitter"></i><input size="30" type="text" name="sftwitter">
+														</div>
+														<div class="socialic">
+															<i class="fa fa-facebook"></i><input size="30" type="text" name="sffacebook">
+														</div><br>
+														<div class="formtext submits">
+															<input class="cancel" name="cancel" type="submit" value="Cancel"> <input class="save" name="sfsave" type="submit" value="Save">
+														</div>
+													</form>
+												</div>
+											</div>
+								</div>
+								<div id="contactform">
+									<form class="form" method="post">
+										<div class="formhead">
+											<button class="close" onclick="contactoff()"><i class="fa fa-close"></i></button>
+											<h3>Contact Information</h3>
+											<p>Provide contact information for your company.</p>
+										</div>
+										<div class="formtext">
+											<label for="cfphone">Phone Number</label><br>
+											<input name="cfphone" size="40" type="text"><br>
+											<label for="cfemail">Email</label><br>
+											<input name="cfemail" size="40" type="email"><br>
+											<br>
+											<div class="formtext submits">
+												<input class="cancel" name="cancel" type="submit" value="Cancel"> <input class="save" name="cfsave" type="submit" value="Save">
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="summary">
+									<center><i class="fa fa-lock icsize">Only NamanAngels users who have been granted access can view this content.</i></center>
+									<div class="databox">
+										<h3>Current Funding Round (USD)</h3>
+										  Detail your stage of funding, the capital you're seeking and your pre-money valuation.<br><br>
+										  <button class="btnfund">Open Funding Round</button>
+									</div>
+									<div class="databox">
+										<button class="pencil"><i class="fa fa-pencil "></i></button>
+										<h3>Funding History (USD)</h3><br>
+										  Please add any previous funding rounds.
+									</div>
+									<div class="databox">
+										<button class="pencil"><i class="fa fa-pencil"></i></button>
+										<h3>Annual Financials (USD)</h3>
+										<div class="p2">
+										</div>
+										<p>Enter your financials for this year and last year, as well as projections for the following three years.</p>
+										<p>Investors like to compare and evaluate financial performance over this timeframe, so do your best to complete it.</p>
+									</div>
+									<div class="databox">
+										<pre>Annual Revenue Run Rate --                        Monthly Burn Rate --<pre>
+											<table>
+											  <tr>
+												<td>         </td>
+											  </tr>
+											  <tr>
+												<td>Revenue Driver</td>
+											  </tr>
+											  <tr>
+												<td>Revenue $</td>
+											  </tr>
+											  <tr>
+												<td>Expenditure $</td>
+											  </tr>
+											  <tr>
+												<td>Profit (Loss) $</td>
+											  </tr>
+											</table>
+									</div>
+								</div>
             </div>
-        </div>    
+        </div>
+	<?php require "include/footer/footer.php" ?>
     </body>
 </html>

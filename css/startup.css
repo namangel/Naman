@@ -1,6 +1,4 @@
-*{
-  font-family: Palanquin;
-}
+
 body {
   background-color: #fff;
   margin:0px;
@@ -24,13 +22,8 @@ hr {
     color: black;
     grid-gap: 0px;
     grid-template-columns:repeat(12,1fr);
-    grid-template-rows: minmax(60px,auto);
 }
 
-/* .headfoot{
-    grid-column: span 12;
-    background-color: black;
-  } */
 .ss{
   grid-column: span 12;
   text-align: center;

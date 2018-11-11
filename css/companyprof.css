@@ -3,13 +3,11 @@ body {
   padding:0px;
 }
 
-
 .container{
     display: grid;
     grid-template-rows: 2fr 8fr 3fr;
     grid-gap: 1em;
     height: 1000px;
-    overflow: scroll;
 }
 .main{
     display: grid;
@@ -19,25 +17,19 @@ body {
     margin-left: 7em;
     margin-right: 7em;
 }
-.main > div{
-    background: white;
-}
 
 .backimg{
     grid-column:1/3;
-    grid-row: 2/4;
+    grid-row: 2;
 }
-.backimg .uploadbg{
-    /*visibility: hidden;*/
+
+.backimg{
     background-color:#10ac84;
     text-align: center;
     color: white;
     padding: 4px;
+    height: 40px;
 }
-/*.backimg:hover .uploadbg{
-    visibility: visible;
-}*/
-
 
 .sideprof,.social,.contact{
     grid-column: 1;
@@ -46,7 +38,9 @@ body {
     padding: 15px;
     align-content: center;
     border: 1px solid gray;
+    background-color: white;
 }
+
 .sideprof{
     grid-row:3/6;
 }
@@ -75,25 +69,33 @@ body {
 .sideprof .value{
     float:right;
 }
-.sideprof .sidebutn{
+.sideprof .b1{
     width: 90%;
     margin: 10px;
 }
-
-
-#overlay,#sumformov,#socialformov,#olpformov,#adv,#contactform,#profteam,#addteam,#inv,#reqformov, #overly,#cust, #product,#target, #bussi, #segs, #sales, #comp{
+#overlay,#sumformov,#socialformov,#overly,#product,#cust,#target,#bussi,#segs,#sales,#comp,#adv,#contactform,#profteam,#addteam,#adv,#inv{
     position: fixed;
     overflow-y: scroll;
     display: none;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color:rgba(0,0,0,0.5);
+    background-color:rgba(0,0,0,0.5);;
     z-index: 2;
     cursor: pointer;
+}
+
+.databox{
+  border: 1px dashed gray;
+  margin:10px;
+  padding: 10px;
+  padding-top: 0px;
+}
+.databox .pencil{
+  margin-top: 10px;
 }
 
 .nav{
@@ -101,7 +103,6 @@ body {
     grid-row: 3;
     border-bottom: 1px solid gray;
 }
-
 .nav >div{
     float:left;
     margin: 1em;
@@ -124,23 +125,22 @@ body {
     margin-top:20px;
 }
 
-#summary, #exe, #finance, #doc{
+.summary{
     grid-column: 2;
     grid-row: 4/9;
 }
-
 .icsize{
     font-size:11pt;
     color: gray;
 }
-.pencil,.add{
+.summary .pen,.pencil,.add{
     float:right;
 }
 .form{
     display: grid;
     grid-template-rows:1fr 2fr;
-    /* justify-items: center; */
-    /* align-items: center; */
+    justify-items: center;
+    align-items: center;
     width: 500px;
     margin: 100px auto;
     background-color: #eee;
@@ -149,7 +149,7 @@ body {
 .formtext {
     grid-row:2;
     max-width: 100%;
-    height: auto;
+    height: 100%;
     width: 400px;
 }
 .formhead {
@@ -162,25 +162,36 @@ body {
 .socialic{
     margin-bottom: 5px;
 }
-.save,.b1{
+.save,.b1,.adddoc{
     background-color: #10ac84;
     color: white;
     border:2px solid #10ac84;
     padding: 10px;
     margin-left: 10px;
 }
+.adddoc{
+    float: right;
+    margin-top: 10px;
+}
+.adddoc:hover{
+  opacity:0.6;
+  cursor: pointer;
+}
 .cancel,.b2,.pencil,.add{
+    margin-top: 5px;
     border:2px solid #10ac84;
     background-color: white;
     padding: 10px;
+    cursor: pointer;
 }
 .cancel:hover,.pencil:hover,.add:hover,.b2:hover{
     background-color:#eee;
+    cursor:pointer;
 }
 .save:hover,.b1:hover{
-    opacity:0.6;
+  opacity:0.6;
+  cursor:pointer;
 }
-
 
 .compbasics{
     display: grid;
@@ -200,4 +211,7 @@ body {
 .compbasics input,select,textarea{
     size: 255pt;
     width: 100%;
+}
+.compbasics butn{
+    float: right;
 }

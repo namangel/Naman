@@ -7,47 +7,29 @@
 </head>
 <body>
 
+<?php require 'include/header/register.php'; ?>
+
 <div class="grid-container">
 
-	<div class="topnav">
-		<div class="nop"> </div>
-		<div class="top3">
-            <center><a href="index.php"><img src="img/logo3.png" style="height:50px;width:135px; margin: 5px;"></a></center>
-         </div>
-
+	<div class="item2">
+		<center>
+		<img src="img/logo2.png" height="200">
+		</center>
+		Welcome to Naman
+		<hr style="align:center;size:10px;width:30%">
 	</div>
 
-<div class="item2">
-	<center>
-	<img src="img/logo2.png" height="200">
-</center>
-Welcome to Naman
-<hr style="align:center;size:10px;width:30%">
+	<div class="item3">
+		Please select the role that describes you.
+		<br>
+		<button class="buttonst" onclick="location.href='login_st.php'">I'm An Entrepreneur</button>
+		<br>
+		<button class="buttoninv" onclick="location.href='login_inv.php'">I'm An Investor</button>
+		<br>
+		<br>
+		<hr style="align:center;size:10px;width:30%">
+	</div>
 </div>
-
-<div class="item3">
-	Please select the role that describes you.
-	<br>
-	<button class="buttonst" onclick="location.href='login_st.php'">I'm An Entrepreneur</button>
-	<br>
-	<button class="buttoninv" onclick="location.href='login_inv.php'">I'm An Investor</button>
-	<br>
-	<br>
-	<hr style="align:center;size:10px;width:30%">
-</div>
-<!-- <div class="item1">
-<div class="foot">
-<pre>
-<a class="a1" href="#">Company Info</a>  <a href="#" class="a1">For Startups</a>  <a href="#" class="a1">For Investors</a>  <a class="a1" href="#"> Blog</a>  <a href="#" class="a1"> Support</a> <a href="#" class="a1" > Contact Us</a>
-</pre>
-<i class="fa fa-facebook-official" style="font-size:48px;color:#9cc5e0"></i>
-<i class="fa fa-twitter-square" style="font-size:49px;color:#9cc5e0"></i>
-<br>
-<pre>
-<a class="a2" href="#">Terms of Service </a> | <a href="#" class="a2"> Privacy </a> | <a class="a2" href="#" > License </a>
-</div>
-
-</div> -->
-<?php require "include/footer.php"?>
+<?php require "include/footer/footer.php"?>
 </body>
 </html>

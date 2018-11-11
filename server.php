@@ -153,7 +153,7 @@ if (isset($_POST['reg_st'])) {
   	mysqli_query($db, $query);
 
   	// $_SESSION['success'] = "You are now logged in";
-  	header('location: Startup-DB.php');
+  	header('location: StartUp-DB-Overview.php');
   }
 }
 
@@ -202,7 +202,7 @@ if (isset($_POST['login_st']))
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['username'] = $username;
   	  $_SESSION['success'] = "You are now logged in";
-  	  		header('location: StartUp-DB.php');
+  	  		header('location: StartUp-DB-Overview.php');
   	}
     else
     {
