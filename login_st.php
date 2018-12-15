@@ -9,8 +9,8 @@
 </head>
 <body>
 
-    <?php require 'include/header/register.php'; ?>
-
+    <?php require 'include/header/login.php'; ?>
+    <div style="height:500px">
     <br><br><br>
     <div class="header" style="background :#00b894 ">
         <h2>Login - Startup</h2>
@@ -35,6 +35,7 @@
         </form>
     </div>
     <div class="no5">.</div>
+</div>
 
 
 <?php require "include/footer/footer.php"?>

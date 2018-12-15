@@ -86,7 +86,7 @@ if (isset($_POST['reg_inv'])) {
   	mysqli_query($db, $query);
 
   	// $_SESSION['success'] = "You are now logged in";
-  	header('location: Investor-DB.php');
+  	header('location: inv_1.php');
   }
 }
 
@@ -153,7 +153,7 @@ if (isset($_POST['reg_st'])) {
   	mysqli_query($db, $query);
 
   	// $_SESSION['success'] = "You are now logged in";
-  	header('location: StartUp-DB-Overview.php');
+  	header('location: db-home.php');
   }
 }
 
@@ -175,7 +175,7 @@ if (isset($_POST['login_inv'])) {
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['username'] = $username;
   	  $_SESSION['success'] = "You are now logged in";
-		  header('location: Investor-DB.php');
+		  header('location: Inv_Profile.php');
   	}else {
   		array_push($errors, "Wrong username/password combination");
   	}
@@ -202,7 +202,7 @@ if (isset($_POST['login_st']))
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['username'] = $username;
   	  $_SESSION['success'] = "You are now logged in";
-  	  		header('location: StartUp-DB-Overview.php');
+  	  		header('location: db-home.php');
   	}
     else
     {

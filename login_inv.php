@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <?php require 'include/header/register.php'; ?>
+  <?php require 'include/header/login.php'; ?>
   <br><br><br>
   <div class="header" style="background-color:#ee5253">
   	<h2>Login - Invester</h2>

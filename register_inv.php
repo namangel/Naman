@@ -2,22 +2,28 @@
 <html>
 <head>
   <title>Register Yourself - NamanAngels</title>
-  <link rel="stylesheet" type="text/css" href="css/login.css">
-  <link rel="stylesheet" type="text/css" href="css/navbar.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/register.css">
+  <link rel="stylesheet" type="text/css" href="css/navbar.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 <?php require 'include/header/register.php'; ?>
 
-  <div class="header" style="background-color:#ee5253"><h2>Register - Invester</h2></div>
+
+  <div class="header"><h2>Register - Invester</h2><hr></div>
   <div>
   <form method="post" action="register_inv.php" onsubmit="validate()">
-  	<?php include('errors.php'); ?>
-  	<div class="input-group">
-  	  <label>Company name</label>
-  	  <input type="text" name="iname" value="<?php echo $iname;?>" autofocus required>
-  	</div>
+
+    <div class="content">
+      <div class="input-group">
+        <label>Company name</label>
+        <input type="text" name="iname" value="<?php echo $iname;?>" autofocus required>
+      </div>
+    <div class="input-group">
+        <label>Email</label>
+        <input type="email" name="email" value="<?php echo $email; ?>"required>
+      </div>
     <div class="input-group">
       <label>First Name</label>
       <input type="text" name="fname" value="<?php echo $fname; ?>" required>
@@ -26,12 +32,16 @@
       <label>Last Name</label>
       <input type="text" name="lname" value="<?php echo $lname; ?>"required>
     </div>
-  	<div class="input-group">
-  	  <label>Email</label>
-  	  <input type="email" name="email" value="<?php echo $email; ?>"required>
-  	</div>
     <div class="input-group">
-  	  <label>Country</label>
+      <label>City</label>
+      <input type="text" name="city" value="<?php echo $city; ?>" required>
+    </div>
+    <div class="input-group">
+      <label>State</label>
+      <input type="text" name="state" value="<?php echo $state; ?>"required>
+    </div>
+    <div class="input-group">
+        <label>Country</label>
       <select name="country"required>
         <option value="NULL"></option>
         <option value="AF">Afghanisthan</option>
@@ -284,49 +294,47 @@
         <option value="ZM">Zambia</option>
         <option value="ZW">Zimbabwe</option>
       </select>
-  	</div>
-    <div class="input-group">
-      <label>City</label>
-      <input type="text" name="city" value="<?php echo $city; ?>" required>
-    </div>
-    <div class="input-group">
-      <label>State</label>
-      <input type="text" name="state" value="<?php echo $state; ?>"required>
-    </div>
-    <div class="input-group">
-  	  <label>Website</label>
-  	  <input type="text" name="website" value="<?php echo $website; ?>"required>
-  	</div>
+      </div>
     <div class="input-group">
       <label>Average No. Of Invested Companies Per Year</label>
       <input type="text" name="average" value="<?php echo $average; ?>"required>
     </div>
     <div class="input-group">
-      <label>Username</label>
-      <input type="text" name="username" value="<?php echo $username; ?>"required>
-    </div>
+        <label>Website</label>
+        <input type="text" name="website" value="<?php echo $website; ?>"required>
+      </div>
     <div class="input-group">
       <label>Phone</label>
-      <input type="number" name="phone" value="<?php echo $phone; ?>" required>
+      <input type="number" name="phone" value="" required>
     </div>
-  	<div class="input-group">
-  	  <label>Password</label>
-  	  <input type="password" name="password_1">
-  	</div>
-  	<div class="input-group">
-  	  <label>Confirm password</label>
-  	  <input type="password" name="password_2">
-  	</div>
-  	<div class="input-group">
-  	  <button type="submit" class="btn" name="reg_inv" style="background-color:#ee5253">Register Invester</button>
-  	</div>
-  	<p style="font-size:15px">
-  		Already a member? <a href="login_inv.php">Sign in</a>
-  	</p>
+
+    <br><br><hr style="width:50%">
+    <div class="input-group">
+      <label>Username</label>
+      <input type="text" name="username" value=""required>
+    </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" name="password_1">
+      </div>
+    <div class="input-group">
+    </div>
+      <div class="input-group">
+        <label>Confirm password</label>
+        <input type="password" name="password_2">
+      </div>
+</div>
+<div class="contbot">
+      <div class="input-group">
+        <button type="submit" class="btn" name="reg_inv" style="background-color:#ee5253">Register Invester</button>
+      </div>
+      <p style="font-size:15px">
+          Already a member? <a href="login_inv.php">Sign in</a>
+      </p>
+</div>
   </form>
 </div>
-  <div class="no5">.</div>
-
 <?php require "include/footer/footer.php"?>
 </body>
 </html>

@@ -258,8 +258,8 @@
         <script src="js\profform.js"></script>
     </head>
     <body>
-		<?php require 'include/header/postlogin.php'; ?>
         <div class="container">
+			<?php require 'include/header/postlogin.php'; ?>
             <div class="main">
             	<div class="backimg">
                     <font style="font-size:30px;"><?= $Stname?></font>
@@ -479,7 +479,7 @@
 						</div>
 				</div>
     		</div>
+			<?php include 'include/footer/footer.php'; ?>
         </div>
-		<?php include 'include/footer/footer.php'; ?>
     </body>
 </html>

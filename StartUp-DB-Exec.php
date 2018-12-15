@@ -108,7 +108,7 @@
 			mysqli_query($db, $q);
 		}
 
-		header('location: StartUp-DB.php');
+		header('location: StartUp-DB-Overview.php');
 	}
 
 	if(isset($_POST["sfsave"])){
@@ -131,7 +131,7 @@
 			$q = "UPDATE st_overview set FBLink='$sffacebook' where Username='$u';";
 			mysqli_query($db, $q);
 		}
-		header('location: StartUp-DB.php');
+		header('location: StartUp-DB-Overview.php');
 	}
 
 	if(isset($_POST["cfsave"])){
@@ -148,60 +148,7 @@
 			$q = "UPDATE user_st set Email='$cfemail' where Username='$u';";
 			mysqli_query($db, $q);
 		}
-		header('location: StartUp-DB.php');
-	}
-
-	if(isset($_POST['sumsave'])){
-		$summaryform = mysqli_real_escape_string($db, $_POST['summaryform']);
-		$q = "UPDATE st_overview set Summary='$summaryform' where Username='$u';";
-		mysqli_query($db, $q);
-
-		header('location: StartUp-DB.php');
-	}
-
-	if(isset($_POST['casave'])){
-		$caname = mysqli_real_escape_string($db, $_POST['caname']);
-		$caemail = mysqli_real_escape_string($db, $_POST['caemail']);
-		if($caname !="")
-		{
-			$q = "UPDATE st_overview set CAdvName='$caname' where Username='$u';";
-			mysqli_query($db, $q);
-		}
-		if($caemail !="")
-		{
-			$q = "UPDATE st_overview set CAdvEmail='$caemail' where Username='$u';";
-			mysqli_query($db, $q);
-		}
-
-		header('location: StartUp-DB.php');
-	}
-
-	if(isset($_POST['pisave'])){
-		$piname = mysqli_real_escape_string($db, $_POST['piname']);
-		$piemail = mysqli_real_escape_string($db, $_POST['piemail']);
-		if($piname !="")
-		{
-			$q = "UPDATE st_overview set PIName='$piname' where Username='$u';";
-			mysqli_query($db, $q);
-		}
-		if($piemail !="")
-		{
-			$q = "UPDATE st_overview set PIEmail='$piemail' where Username='$u';";
-			mysqli_query($db, $q);
-		}
-
-		header('location: StartUp-DB.php');
-	}
-
-	if(isset($_POST['olpsave'])){
-		$olpnew = mysqli_real_escape_string($db, $_POST['olpform']);
-		if($olpnew !="")
-		{
-			$q = "UPDATE st_overview set OLP='$olpnew' where Username='$u';";
-			mysqli_query($db, $q);
-		}
-
-		header('location: StartUp-DB.php');
+		header('location: StartUp-DB-Overview.php');
 	}
 
 
@@ -263,8 +210,8 @@
 				</style>
     </head>
     <body>
+		<div class="container">
 			<?php require 'include/header/postlogin.php'; ?>
-        <div class="container">
             <div class="main">
             	<div class="backimg">
                     <font style="font-size:30px;"><?= $Stname?></font>
@@ -342,7 +289,7 @@
               </div>
               <div id="overlay">
                   <div class="compbasics">
-                      <form class="profform" method="post" action='StartUp-DB.php' enctype="multipart/form-data">
+                      <form class="profform" method="post" action='StartUp-DB-Exec.php' enctype="multipart/form-data">
                           <button class="close" onclick="off()"><i class="fa fa-close"></i></button>
                           <div class="i1">
                               <h2>Company Basics</h2>
@@ -703,7 +650,8 @@
 					           </div>
 				      </div>
 	        </div>
+			<?php require "include/footer/footer.php" ?>
 	    </div>
-		<?php require "include/footer/footer.php" ?>
+		
     </body>
 </html>
