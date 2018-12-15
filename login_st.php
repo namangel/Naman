@@ -1,3 +1,4 @@
+Hello Nitish
 <?php require('server.php') ?>
 
 <html>
