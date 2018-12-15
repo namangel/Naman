@@ -1,8 +1,8 @@
-            body 
+            body
             {
                 margin:0px;
                 padding:0px;
-            }  
+            }
 
             font
             {
@@ -26,11 +26,11 @@
                 margin-right: 10px;
                 margin-top: 15px;  */
             }
-            
+
             .item1 {
                 background-color: #0A2B40;
             }
-            
+
             .startnav ,.dropdown
             {
                 margin-right: 100px;
@@ -55,14 +55,14 @@
                 margin-top: 20px;
             }
             .item3
-            {   
+            {
                 display: grid;
                 margin-top: 20px;
                 background-color: white;
                 grid-template-columns: auto;
                 grid-template-rows: 30px auto;
                 grid-gap: 20px;
-            }  
+            }
 
             .item3-1
             {
@@ -86,14 +86,14 @@
             }
 
              .item4
-            {   
+            {
                 display: grid;
                 margin-top: 60px;
                 background-color: white;
                 grid-template-columns: auto;
                 grid-template-rows: 30px auto;
                 grid-gap: 20px;
-            }  
+            }
 
             .item4-2
             {
@@ -104,7 +104,7 @@
                 background-color: #f2f2f2;
                 grid-template-columns: 500px auto;
                 grid-template-rows: auto;
-            } 
+            }
             div.item4-2
             {
                 margin-top: 40px;
@@ -121,9 +121,9 @@
             {
                 margin-top: 60px;
                 background-color: #f2f2f2;
-            } 
-            
-            .button 
+            }
+
+            .button
             {
                 background-color: 0b7df7;
                 border: none;
@@ -137,8 +137,8 @@
                 cursor: pointer;
                 font-family: "Times New Roman", Times, serif;
             }
-            
-            .button1 
+
+            .button1
             {
                 background-color: #f2f2f2;
                 border: none;
@@ -164,7 +164,7 @@
                 background-color:#10ac84;
                 color: black;
             }
-            .button2 
+            .button2
             {
                 width: 200px;
                 padding: 5px 15px;
@@ -174,8 +174,8 @@
                 margin: 4px 2px;
                 cursor: pointer;
                 font-family: "Times New Roman", Times, serif;
-                background-color: white; 
-                color: #008CBA; 
+                background-color: white;
+                color: #008CBA;
                 border: 2px solid #008CBA;
             }
 
@@ -189,8 +189,8 @@
                 margin: 4px 2px;
                 cursor: pointer;
                 font-family: "Times New Roman", Times, serif;
-                background-color:  #008CBA; 
-                color: white; 
+                background-color:  #008CBA;
+                color: white;
                 border: 2px solid #008CBA;
             }
 
@@ -200,7 +200,7 @@
                 color: white;
                 padding: 20px;
                 font-size: 18px;
-                border: none; 
+                border: none;
             }
             .item5
             {
@@ -214,12 +214,12 @@
                 font-size: 18px;
                 border: none;
             }
-            
+
             .dropdown {
                 position: relative;
                 display: inline-block;
             }
-            
+
             .dropdown-content {
                 display: none;
                 position: absolute;
@@ -228,18 +228,18 @@
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 1;
             }
-            
+
             .dropdown-content a {
                 color: white;
                 padding: 12px 16px;
                 text-decoration: none;
                 display: block;
             }
-            
+
             .dropdown-content a:hover {background-color:  rgba(178, 220, 255,0.5);}
-            
+
             .dropdown:hover .dropdown-content {display: block;}
-            
+
             .dropdown:hover .dropbtn {background-color:  rgba(178, 220, 255,0.5);}
 
                   /*CSS3 STROKE EFFECT*/
@@ -275,7 +275,7 @@
       #mainNav ul li a:hover {
         color:#0A2B40;
       }
-      
+
       /* stroke */
       #mainNav.stroke ul li a
       {
@@ -297,11 +297,11 @@
       #mainNav.stroke ul li a:hover:after {
         width: 100%;
       }
-      
+
       #mainNav ul li a {
         transition: all 1s;
       }
-      
+
       #mainNav ul li a:after {
         text-align: left;
         content: '.';

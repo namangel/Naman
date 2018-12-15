@@ -402,17 +402,23 @@
           <input type="text" name="inv" required>
         </div>
         <div class="input-group">
-          <label>Username</label>
-          <input type="text" name="username" required>
-        </div>
-        <div class="input-group">
           <label>Phone</label>
           <input type="number" name="phone"required>
         </div>
+        <div class="input-group">
+        </div>
+        <br><br><hr style="width:50%">
+        <div class="input-group">
+          <label>Username</label>
+          <input type="text" name="username" required>
+        </div>
+
       	<div class="input-group">
       	  <label>Password</label>
       	  <input type="password" name="password_1"required>
       	</div>
+        <div class="input-group">
+        </div>
       	<div class="input-group">
       	  <label>Confirm password</label>
       	  <input type="password" name="password_2"required>

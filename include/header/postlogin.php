@@ -1,17 +1,17 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css\db-home.css"> 
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="css\db-home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Profile</title>
 </head>
 <body>
 <div class="item1">
     <div class="startnav" style="float: left;">
         <a href="index.php"><img src="./img/logo3.png" style="height:50px; width:135px; margin: 5px;"></a>
-    </div> 
+    </div>
     <div style="float: left;">
         <button class="button3">Name</button>
-    </div>    
+    </div>
     <div style="float: right;">
         <div style="float: left;">
             <button class="icon"><i class="fa fa-search"style="font-size:30px; color: white;"></i></button>
@@ -26,7 +26,7 @@
                 <a href="index.php">Sign out</a>
             </div>
         </div>
-    </div>    
+    </div>
     </div>
     <div class="item2">
         <nav id="mainNav" class="stroke">
