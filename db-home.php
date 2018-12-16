@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-Hello Aayush
-=======
-Hello Akshi
->>>>>>> f6516f30eecd100a29676f0b6195ac88e9cfcfcb
 <?php require('server.php') ?>
 <html>
 <head>
