@@ -1,3 +1,4 @@
+Hello Akshi
 <?php require('server.php') ?>
 <html>
 <head>
