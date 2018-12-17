@@ -1,4 +1,3 @@
-hello
 <?php require('server.php') ?>
 <html>
 <head>
