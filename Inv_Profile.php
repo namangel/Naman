@@ -14,6 +14,12 @@
     $email = $row['Email'];
     $website = $row['Website'];
 
+    $qu = "SELECT * FROM inv_overview WHERE Username='$u'";
+    $results = mysqli_query($db, $qu);
+    $row = mysqli_fetch_assoc($results);
+    $img=$row['Image'];
+    $indOfInt=$row['IndustryOfInterest'];
+    $summary=$row['Summary'];
 
     if(isset($_POST["slsave"]))
 	{
@@ -26,19 +32,9 @@
 			$q = "UPDATE inv_overview set LinkedIn='$sllinkin' where Username='$u'";
 			mysqli_query($db, $q);
         }
-        else
-        {
-            $q = "INSERT INTO inv_overview(LinkedIn) VALUES ('$sllinkin') where Username='$u'";
-			mysqli_query($db, $q);
-        }
 		if($sltwit != NULL)
 		{
 			$q = "UPDATE inv_overview set TwitterLink='$sltwit' where Username='$u'";
-			mysqli_query($db, $q);
-        }
-        else
-        {
-            $q = "INSERT INTO inv_overview(TwitterLink) VALUES ('$sltwit') where Username='$u'";
 			mysqli_query($db, $q);
         }
 		if($slfb != NULL)
@@ -46,14 +42,8 @@
 			$q = "UPDATE inv_overview set FBLink='$slfb' where Username='$u'";
 			mysqli_query($db, $q);
         }
-        else
-        {
-            $q = "INSERT INTO inv_overview(FBLink) VALUES ('$slfb') where Username='$u'";
-			mysqli_query($db, $q);
-        }
 		header('location: Inv_Profile.php');
     }
-    
 
     if(isset($_POST["editsubmit"]))
 	{
@@ -77,7 +67,36 @@
 			mysqli_query($db, $q);
 		}
 		header('location: Inv_Profile.php');
-	}
+    }
+    
+    // $check = getimagesize($_FILES["profpic"]["tmp_name"]);
+    // if($check !== false)
+    // {
+	// 	$image = $_FILES['profpic']['tmp_name'];
+    //     $imgContent = addslashes(file_get_contents($image));
+
+	// 	$q = "UPDATE inv_overview set Image='$imgContent' where Username='$u';";
+	// 	mysqli_query($db, $q);
+    // }
+    
+    if(isset($_POST["summarysubmit"]))
+	{
+		$ioi = mysqli_real_escape_string($db, $_POST['ioi']);
+        $ovw = mysqli_real_escape_string($db, $_POST['ovw']);
+        
+		if($ioi != NULL)
+		{
+			$q = "UPDATE inv_overview set IndustryOfInterest ='$ioi' where Username='$u'";
+			mysqli_query($db, $q);
+		}
+		if($ovw != NULL)
+		{
+			$q = "UPDATE inv_overview set Summary='$ovw' where Username='$u'";
+			mysqli_query($db, $q);
+		}
+		header('location: Inv_Profile.php');
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -90,9 +109,12 @@
 <body>
     <div class="profbody">
         <div class="banner">
-            <div class="pic"></div>
+            <div class="pic">
+                <!-- make form with i/p type file -->
+                <!-- <?= '<img src="data:image/jpeg;base64,'.base64_encode($image).'"/>';?> -->
+            </div>
             <div class="social">
-                <button class="butn" onclick="on()">Add Social Links</button>                
+                <button class="butn" onclick="on()">Social Links</button>                
             </div>
             <div class="detail">
                 <div class="name"><?= $fname." ".$lname?></div>
@@ -131,11 +153,11 @@
         <div class="pane">
                 <h3>Investor Summary</h3>
                 <p>Add an overview to help startup learn about you. You might like to include your basic interests and values.</p>
-                <form>
-                <center><textarea name="ovw" cols="120" rows="5"></textarea></center>
+                <form method="post" action="Inv_Profile.php">
+                <center><textarea name="ovw" cols="120" rows="5"><?php echo $summary; ?></textarea></center>
                     <br><br>
                     <label for="ioi">Industries Of Interest: </label>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="ioi" size="50"><br>
+                    <input type="text" name="ioi" size="50" value="<?php echo $indOfInt; ?>"><br>
                     <input type="submit" value="Add" name="summarysubmit" class="butn" style="float:right;">
                 </form>
         </div>

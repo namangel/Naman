@@ -26,29 +26,14 @@
 			$q = "UPDATE inv_overview set LinkedIn='$sllinkin' where Username='$u'";
 			mysqli_query($db, $q);
         }
-        else
-        {
-            $q = "INSERT INTO inv_overview(LinkedIn) VALUES ('$sllinkin') where Username='$u'";
-			mysqli_query($db, $q);
-        }
 		if($sltwit != NULL)
 		{
 			$q = "UPDATE inv_overview set TwitterLink='$sltwit' where Username='$u'";
 			mysqli_query($db, $q);
         }
-        else
-        {
-            $q = "INSERT INTO inv_overview(TwitterLink) VALUES ('$sltwit') where Username='$u'";
-			mysqli_query($db, $q);
-        }
 		if($slfb != NULL)
 		{
 			$q = "UPDATE inv_overview set FBLink='$slfb' where Username='$u'";
-			mysqli_query($db, $q);
-        }
-        else
-        {
-            $q = "INSERT INTO inv_overview(FBLink) VALUES ('$slfb') where Username='$u'";
 			mysqli_query($db, $q);
         }
 		header('location: Inv_Profile_Group.php');
@@ -77,7 +62,36 @@
 			mysqli_query($db, $q);
 		}
 		header('location: Inv_Profile_Group.php');
-	}
+    }
+    
+
+    if(isset($_POST["grpsubmit"]))
+	{
+		$grpname = mysqli_real_escape_string($db, $_POST['grpName']);
+        $grpdesig = mysqli_real_escape_string($db, $_POST['grpDesig']);
+        $grpexp = mysqli_real_escape_string($db, $_POST['grpExp']);
+        
+		if($grpname != NULL and $grpexp != NULL and $grpdesig != NULL)
+		{
+			$q = "INSERT INTO inv_group  VALUES ('$u','$grpname','$grpdesig','$grpexp');";
+			mysqli_query($db, $q);
+		}
+		header('location: Inv_Profile_Group.php');
+    }
+
+    if(isset($_POST["grpremove"]))
+	{
+		$grpname = mysqli_real_escape_string($db, $_POST['grpName']);
+        
+		if($grpname != NULL)
+		{
+			$q = "DELETE FROM inv_group WHERE Username='$u' AND GrpName='$grpname';";
+			mysqli_query($db, $q);
+		}
+		header('location: Inv_Profile_Group.php');
+    }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -131,15 +145,16 @@
         <div class="pane">
                 <h3>Group</h3>
                 <p>Manage your affiliations.</p>
-                <form>
+                <form method="post" action="Inv_Profile_Group.php">
                     <center>
-                        <label>Name:</label>&nbsp;<input type="text" name="grpname" size="50">&nbsp;&nbsp;&nbsp;
-                        <label>Designation:</label>&nbsp;<input type="text" name="grpname" size="50">
+                        <label>Name:</label>&nbsp;<input type="text" name="grpName" size="50">&nbsp;&nbsp;&nbsp;
+                        <label>Designation:</label>&nbsp;<input type="text" name="grpDesig" size="50">
                         <br><br>
-                        <label>Experience:</label>&nbsp;&nbsp;<input type="text" name="exp" size="115">
+                        <label>Experience:</label>&nbsp;&nbsp;<input type="text" name="grpExp" size="115">
                         <br><br>
                         <input type="submit" value="Add" name="grpsubmit" class="butn">&nbsp;&nbsp;&nbsp;
                         <input type="submit" value="Remove" name="grpremove" class="butn">
+                        <p style=" font-size:10pt; color:gray;">Fill all details to add a group and only the name to remove corresponding group.</p>
                     </center>
                 </form>
                 <table>

@@ -26,29 +26,14 @@
 			$q = "UPDATE inv_overview set LinkedIn='$sllinkin' where Username='$u'";
 			mysqli_query($db, $q);
         }
-        else
-        {
-            $q = "INSERT INTO inv_overview(LinkedIn) VALUES ('$sllinkin') where Username='$u'";
-			mysqli_query($db, $q);
-        }
 		if($sltwit != NULL)
 		{
 			$q = "UPDATE inv_overview set TwitterLink='$sltwit' where Username='$u'";
 			mysqli_query($db, $q);
         }
-        else
-        {
-            $q = "INSERT INTO inv_overview(TwitterLink) VALUES ('$sltwit') where Username='$u'";
-			mysqli_query($db, $q);
-        }
 		if($slfb != NULL)
 		{
 			$q = "UPDATE inv_overview set FBLink='$slfb' where Username='$u'";
-			mysqli_query($db, $q);
-        }
-        else
-        {
-            $q = "INSERT INTO inv_overview(FBLink) VALUES ('$slfb') where Username='$u'";
 			mysqli_query($db, $q);
         }
 		header('location: Inv_Profile_Investment.php');
@@ -77,7 +62,33 @@
 			mysqli_query($db, $q);
 		}
 		header('location: Inv_Profile_Investment.php');
-	}
+    }
+    
+    if(isset($_POST["invsubmit"]))
+	{
+		$invname = mysqli_real_escape_string($db, $_POST['piname']);
+        $invyear = mysqli_real_escape_string($db, $_POST['piyear']);
+        $invstage = mysqli_real_escape_string($db, $_POST['pistage']);
+        
+		if($invname != NULL and $invyear != NULL and $invstage!= 'Select Stage')
+		{
+			$q = "INSERT INTO inv_prevInvestment  VALUES ('$u','$invname','$invyear','$invstage');";
+			mysqli_query($db, $q);
+		}
+		header('location: Inv_Profile_Investment.php');
+    }
+
+    if(isset($_POST["invremove"]))
+	{
+		$invname = mysqli_real_escape_string($db, $_POST['piname']);
+        
+		if($invname != NULL)
+		{
+			$q = "DELETE FROM inv_prevInvestment WHERE Username='$u' AND PIName='$invname';";
+			mysqli_query($db, $q);
+		}
+		header('location: Inv_Profile_Investment.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -131,22 +142,24 @@
         <div class="pane">
                 <h3>Investments</h3>
                 <p>Add your previous investments.</p>
-                <form>
+                <form method="post" action="Inv_Profile_Investment.php">
                     <center>
-                        <label>Company Name:</label>&nbsp;<input type="text" name="compname" cols="30">&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label>Year:</label>&nbsp;<input type="text" name="year" cols="20">&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label>Company Name:</label>&nbsp;<input type="text" name="piname" cols="30">&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label>Year:</label>&nbsp;<input type="text" name="piyear" cols="20">&nbsp;&nbsp;&nbsp;&nbsp;
                         <label>Stage:</label>&nbsp;
-                        <select name="stage">
-                        <option value="seed">Seed</option>
-                        <option value="a">Series A</option>
-                        <option value="b">Series B</option>
-                        <option value="c">Series C</option>
-                        <option value="d">Series D</option>
-                        <option value="other">Other</option>
-                        </select>&nbsp;&nbsp;&nbsp;
+                        <select name="pistage">
+                        <option >Select Stage</option>
+                        <option >Seed</option>
+                        <option >Series A</option>
+                        <option >Series B</option>
+                        <option >Series C</option>
+                        <option >Series D</option>
+                        <option >Other</option>
+                        </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="submit" value="Add" name="invsubmit" class="butn" style="margin-left:50px;">&nbsp;&nbsp;
                         <input type="submit" value="Remove" name="invremove" class="butn">
-                    </center>          
+                    </center> 
+                        <p style="float:right; font-size:9pt; color:gray;">Fill all details to add a group and only the name to remove corresponding investment.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>         
                 </form>
                 <br><br><br><br>
                 <table>
