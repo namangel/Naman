@@ -25,18 +25,33 @@
 		{
 			$q = "UPDATE inv_overview set LinkedIn='$sllinkin' where Username='$u'";
 			mysqli_query($db, $q);
-		}
+        }
+        else
+        {
+            $q = "INSERT INTO inv_overview(LinkedIn) VALUES ('$sllinkin') where Username='$u'";
+			mysqli_query($db, $q);
+        }
 		if($sltwit != NULL)
 		{
 			$q = "UPDATE inv_overview set TwitterLink='$sltwit' where Username='$u'";
 			mysqli_query($db, $q);
-		}
+        }
+        else
+        {
+            $q = "INSERT INTO inv_overview(TwitterLink) VALUES ('$sltwit') where Username='$u'";
+			mysqli_query($db, $q);
+        }
 		if($slfb != NULL)
 		{
 			$q = "UPDATE inv_overview set FBLink='$slfb' where Username='$u'";
 			mysqli_query($db, $q);
-		}
-		header('location: Inv_Profile.php');
+        }
+        else
+        {
+            $q = "INSERT INTO inv_overview(FBLink) VALUES ('$slfb') where Username='$u'";
+			mysqli_query($db, $q);
+        }
+		header('location: Inv_Profile_Group.php');
     }
     
 
@@ -61,7 +76,7 @@
 			$q = "UPDATE user_inv set Website='$updwebsite' where Username='$u'";
 			mysqli_query($db, $q);
 		}
-		header('location: Inv_Profile.php');
+		header('location: Inv_Profile_Group.php');
 	}
 ?>
 
@@ -115,16 +130,20 @@
         </div>
         <div class="pane">
                 <h3>Group</h3>
-                <p>Add your affiliations.</p>
+                <p>Manage your affiliations.</p>
                 <form>
                     <center>
-                        <label>Name:</label>&npsb;<input type="text" name="grpname" cols="30">&npsb;&npsb;
-                        <label>Designation:</label>&npsb;<input type="text" name="grpname" cols="30">
+                        <label>Name:</label>&nbsp;<input type="text" name="grpname" size="50">&nbsp;&nbsp;&nbsp;
+                        <label>Designation:</label>&nbsp;<input type="text" name="grpname" size="50">
                         <br><br>
-                        <label>Experience:</label>&npsb;<input type="text" name="exp" cols="120">
+                        <label>Experience:</label>&nbsp;&nbsp;<input type="text" name="exp" size="115">
+                        <br><br>
+                        <input type="submit" value="Add" name="grpsubmit" class="butn">&nbsp;&nbsp;&nbsp;
+                        <input type="submit" value="Remove" name="grpremove" class="butn">
                     </center>
-                    <input type="submit" value="Add" name="summarysubmit" class="butn" style="float:right;">
                 </form>
+                <table>
+                </table>
         </div>
     </div>
 

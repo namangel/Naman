@@ -25,18 +25,33 @@
 		{
 			$q = "UPDATE inv_overview set LinkedIn='$sllinkin' where Username='$u'";
 			mysqli_query($db, $q);
-		}
+        }
+        else
+        {
+            $q = "INSERT INTO inv_overview(LinkedIn) VALUES ('$sllinkin') where Username='$u'";
+			mysqli_query($db, $q);
+        }
 		if($sltwit != NULL)
 		{
 			$q = "UPDATE inv_overview set TwitterLink='$sltwit' where Username='$u'";
 			mysqli_query($db, $q);
-		}
+        }
+        else
+        {
+            $q = "INSERT INTO inv_overview(TwitterLink) VALUES ('$sltwit') where Username='$u'";
+			mysqli_query($db, $q);
+        }
 		if($slfb != NULL)
 		{
 			$q = "UPDATE inv_overview set FBLink='$slfb' where Username='$u'";
 			mysqli_query($db, $q);
-		}
-		header('location: Inv_Profile.php');
+        }
+        else
+        {
+            $q = "INSERT INTO inv_overview(FBLink) VALUES ('$slfb') where Username='$u'";
+			mysqli_query($db, $q);
+        }
+		header('location: Inv_Profile_Investment.php');
     }
     
 
@@ -61,7 +76,7 @@
 			$q = "UPDATE user_inv set Website='$updwebsite' where Username='$u'";
 			mysqli_query($db, $q);
 		}
-		header('location: Inv_Profile.php');
+		header('location: Inv_Profile_Investment.php');
 	}
 ?>
 
@@ -77,7 +92,7 @@
         <div class="banner">
             <div class="pic"></div>
             <div class="social">
-                <button class="butn" onclick="on()">Add Social Links</button>                
+                <button class="butn" onclick="on()">Social Links</button>                
             </div>
             <div class="detail">
                 <div class="name"><?= $fname." ".$lname?></div>
@@ -118,9 +133,9 @@
                 <p>Add your previous investments.</p>
                 <form>
                     <center>
-                        <label>Company Name:</label>&npsb;<input type="text" name="compname" cols="30">&npsb;&npsb;
-                        <label>Year:</label>&npsb;<input type="text" name="year" cols="20">&npsb;&npsb;
-                        <label>Stage:</label>&npsb;
+                        <label>Company Name:</label>&nbsp;<input type="text" name="compname" cols="30">&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label>Year:</label>&nbsp;<input type="text" name="year" cols="20">&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label>Stage:</label>&nbsp;
                         <select name="stage">
                         <option value="seed">Seed</option>
                         <option value="a">Series A</option>
@@ -128,11 +143,14 @@
                         <option value="c">Series C</option>
                         <option value="d">Series D</option>
                         <option value="other">Other</option>
-                        </select>
-                        <br><br>
-                    </center>
-                    <input type="submit" value="Add" name="summarysubmit" class="butn" style="float:right;">
+                        </select>&nbsp;&nbsp;&nbsp;
+                        <input type="submit" value="Add" name="invsubmit" class="butn" style="margin-left:50px;">&nbsp;&nbsp;
+                        <input type="submit" value="Remove" name="invremove" class="butn">
+                    </center>          
                 </form>
+                <br><br><br><br>
+                <table>
+                </table>
         </div>
     </div>
 

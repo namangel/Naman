@@ -25,17 +25,32 @@
 		{
 			$q = "UPDATE inv_overview set LinkedIn='$sllinkin' where Username='$u'";
 			mysqli_query($db, $q);
-		}
+        }
+        else
+        {
+            $q = "INSERT INTO inv_overview(LinkedIn) VALUES ('$sllinkin') where Username='$u'";
+			mysqli_query($db, $q);
+        }
 		if($sltwit != NULL)
 		{
 			$q = "UPDATE inv_overview set TwitterLink='$sltwit' where Username='$u'";
 			mysqli_query($db, $q);
-		}
+        }
+        else
+        {
+            $q = "INSERT INTO inv_overview(TwitterLink) VALUES ('$sltwit') where Username='$u'";
+			mysqli_query($db, $q);
+        }
 		if($slfb != NULL)
 		{
 			$q = "UPDATE inv_overview set FBLink='$slfb' where Username='$u'";
 			mysqli_query($db, $q);
-		}
+        }
+        else
+        {
+            $q = "INSERT INTO inv_overview(FBLink) VALUES ('$slfb') where Username='$u'";
+			mysqli_query($db, $q);
+        }
 		header('location: Inv_Profile.php');
     }
     
@@ -117,10 +132,10 @@
                 <h3>Investor Summary</h3>
                 <p>Add an overview to help startup learn about you. You might like to include your basic interests and values.</p>
                 <form>
-                <center><textarea cols="120" rows="5"></textarea></center>
+                <center><textarea name="ovw" cols="120" rows="5"></textarea></center>
                     <br><br>
-                    <label for="ioi">Industries Of Interest: </label>
-                    <input type="text" name="ioi" cols="20">
+                    <label for="ioi">Industries Of Interest: </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="ioi" size="50"><br>
                     <input type="submit" value="Add" name="summarysubmit" class="butn" style="float:right;">
                 </form>
         </div>
