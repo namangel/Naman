@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-hello aayush
-=======
-hello sonal
->>>>>>> b398145cdb20d027e42e1f7b7e6e8d91d5ca8eb2
 <?php require('server.php') ?>
 <html>
 <head>
