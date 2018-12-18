@@ -1,18 +1,17 @@
-<?php require('server.php') ?>
+<?php require('../server.php') ?>
 
 <html>
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="css/account.css" type="text/css">
+        <link rel="stylesheet" href="../css/account.css" type="text/css">
     </head>
 
 <body>
 <div class="wrapper">
-<!-- <?php require 'include/header/postlogin.php'; ?> -->
   <div class="two">
-    <div class=hvr-float-shadow >ACCOUNT SETTINGS</div>
+     <div class=hvr-float-shadow >ACCOUNT SETTINGS</div>
       <hr>
         <nav>
                 <UL>
@@ -51,40 +50,49 @@
                     </div>
                     </li>
                 </UL>
-              </nav>
+              </nav>    
       
   </div>
   <div class="three">
-        <article class="content" style="background:white">
-            <div class="hvr-float-shadow" >
-                CHANGE PASSWORD </div>
+        <div class="hvr-float-shadow" >
+                MANAGE COMPANIES </div>
+      <hr>
 
+                   
+                    <form method="POST" action="getdata.php" enctype="multipart/form-data">
+                        First name:<br>
+                        <input type="text" name="firstname" value="Mickey" size=100px>
+                             <br>
+                         Profile Pic:<br>
+                        <input type="file" name="myimage">
+                        <br>
+                        <br>
+                        <br>
+                        <input type="submit" name="submit_image" value="Upload">
+                       </form>
+                  </form> 
                 
-                    <hr>
-                </h1> 
-                <div class="prii">
-     <p><input type="checkbox" name="vehicle" value="Bike" onclick="changeimage()">Your privacy settings control how people can contact and connect with you on Gust. It's important to note that you are automatically connected to anyone affiliated to your company or organization.
-                 People must enter my email address to send a connection request. </p>
-             </div>
-                     
-             </article>
-
 
 
   </div>
- 
+ <div class="four">Footer</div>
 
 </div>
-<script>
-        var image =  document.getElementById("imageOne");
-        
-        function changeimage() {
-        if (image.src == "circleRed.png") {
-            image.src = "circleBlue.png"; 
-        } else {
-            image.src = "circleRed.png";
-        }
-        }
-        </script>
 </body>
 </html>
+
+<script>
+        var newPassword = document.getElementById("new_password");
+        var confirmPassword = document.getElementById("confirm_password");
+  
+        function validatePassword() {
+            if (newPassword.value != confirmPassword.value) {
+                document.getElementById("confirm_password").setCustomValidity("Passwords do not match!");
+            } else {
+                //empty string means no validation error
+                document.getElementById("confirm_password").setCustomValidity('');
+            }
+        }
+        newPassword.addEventListener("change", validatePassword);
+        confirmPassword.addEventListener("change", validatePassword);
+      </script>

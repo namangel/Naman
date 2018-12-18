@@ -1,20 +1,21 @@
-<?php require('server.php') ?>
+<?php require('../server.php') ?>
 
 <html>
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="css/account.css" type="text/css">
-    </head>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/account.css" type="text/css">
+</head>
 
 <body>
 <div class="wrapper">
-<!-- <?php require 'include/header/postlogin.php'; ?> -->
   <div class="two">
-     <div class=hvr-float-shadow >ACCOUNT SETTINGS</div>
+        <div class="hvr-float-shadow" >
+           ACCOUNT SETTINGS </div>
+            
       <hr>
-        <nav>
+<nav>
                 <UL>
                     <li class="var_nav">
                     <div class="link_bg"></div>
@@ -51,28 +52,35 @@
                     </div>
                     </li>
                 </UL>
-              </nav>    
-      
+              </nav>
   </div>
   <div class="three">
         <div class="hvr-float-shadow" >
-                MANAGE COMPANIES </div>
+                EMAIL SETTINGS</div>
       <hr>
 
-                   
-                    <form method="POST" action="getdata.php" enctype="multipart/form-data">
-                        First name:<br>
-                        <input type="text" name="firstname" value="Mickey" size=100px>
-                             <br>
-                         Profile Pic:<br>
-                        <input type="file" name="myimage">
-                        <br>
-                        <br>
-                        <br>
-                        <input type="submit" name="submit_image" value="Upload">
-                       </form>
-                  </form> 
+         <table id="set">
+                <tr>
+                  <th >General Communications
+</th>
+                  <th>Email me</th>
+                  
+                </tr>
+                <tr>
+                  <td>When a user messages me directly me</td>
+                  <td><input type="checkbox" name="vehicle" value="Bike"></td>
+                </tr>
                 
+                <br>
+               
+                <th>My Startup Activity Summary</th>
+                <tr>
+                  <td>Send me a weekly email summary with activity related to abc and ross's Startup</td>
+                  <td><input type="checkbox" name="vehicle" value="Bike"></td>
+                </tr>
+                
+              </table>
+
 
 
   </div>

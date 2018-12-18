@@ -1,15 +1,14 @@
-<?php require('server.php') ?>
+<?php require('../server.php') ?>
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/account.css" type="text/css">
+    <link rel="stylesheet" href="../css/account.css" type="text/css">
 </head>
 
 <body>
 <div class="wrapper">
-<!--<?php require 'include/header/postlogin.php';?>-->
   <div class="two">
     <div class=hvr-float-shadow >ACCOUNT SETTINGS</div>
     <hr>
