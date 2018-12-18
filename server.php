@@ -69,8 +69,9 @@ if (isset($_POST['reg_inv'])) {
     }
   }
   if (count($errors) == 0) {
+    $fpass = sha1($password_1);
   	$query = "INSERT INTO user_inv (Cname,Fname,Lname,Email,Country,State,City,Website,Avg,Username,Phone,Password)
-  			  VALUES('$iname', '$fname', '$lname', '$email', '$country', '$state', '$city', '$website', '$avg', '$username', '$phone', '$password_1')";
+  			  VALUES('$iname', '$fname', '$lname', '$email', '$country', '$state', '$city', '$website', '$avg', '$username', '$phone', '$fpass')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
     $_SESSION['fname'] = $fname;
@@ -135,8 +136,9 @@ if (isset($_POST['reg_st'])) {
     }
   }
   if (count($errors) == 0) {
+    $fpass = sha1($password_1);
     $query = "INSERT INTO user_st (Stname,Ffname,Sfname,Email,Type,Country,State,City,Website,Inv,Username,Phone,Password)
-    VALUES('$stname','$ffname','$sfname','$email','$type','$country','$state','$city','$website','$inv','$username','$phone','$password_1')";
+    VALUES('$stname','$ffname','$sfname','$email','$type','$country','$state','$city','$website','$inv','$username','$phone','$fpass')";
     mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
     $_SESSION['stname'] = $stname;
@@ -170,7 +172,8 @@ if (isset($_POST['login_inv'])) {
   }
 
   if (count($errors) == 0) {
-  	$query = "SELECT * FROM user_inv WHERE Username='$username' AND Password='$password'";
+    $fpass = sha1($password);
+  	$query = "SELECT * FROM user_inv WHERE Username='$username' AND Password='$fpass'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['username'] = $username;
@@ -197,7 +200,8 @@ if (isset($_POST['login_st']))
 
   if (count($errors) == 0)
   {
-  	$query = "SELECT * FROM user_st WHERE Username='$username' AND Password='$password'";
+    $fpass = sha1($password);
+  	$query = "SELECT * FROM user_st WHERE Username='$username' AND Password='$fpass'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['username'] = $username;
