@@ -157,8 +157,30 @@
                         <p style=" font-size:10pt; color:gray;">Fill all details to add a group and only the name to remove corresponding group.</p>
                     </center>
                 </form>
+                <center>
                 <table>
+                <tr>
+                    <td>Group Name &nbsp;</td>
+                    <td>Designation &nbsp;</td>
+                    <td>Experience &nbsp;</td>
+                </tr>
+                <?php 
+                $qu = "SELECT * FROM user_inv WHERE Username='$u'";
+                $results = mysqli_query($db, $qu);
+                while($row= mysqli_fetch_assoc($results))
+                {
+                    $grpname=$row['GrpName'];
+                    $grpdesig=$row['GrpDesignation'];
+                    $grpexp=$row['GrpExperience'];
+                    echo "<tr>
+                    <td>$grpname</td>
+                    <td>$grpdesig</td>
+                    <td>$grpexp</td>
+                    </tr>";
+                }
+                ?>
                 </table>
+                </center>
         </div>
     </div>
 

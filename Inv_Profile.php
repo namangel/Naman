@@ -79,10 +79,10 @@
 
             $q = "UPDATE inv_overview set ProfileImage='$imgContent' where Username='$u';";
             mysqli_query($db, $q);
-        }
+        }	
         header('location: Inv_Profile.php');
     }
-
+       
     if(isset($_POST["summarysubmit"]))
 	{
 		$ioi = mysqli_real_escape_string($db, $_POST['ioi']);

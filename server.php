@@ -21,7 +21,7 @@ $type = "";
 $inv ="";
 $errors = array();
 
-$db = mysqli_connect('localhost', 'root', '', 'naman');
+$db = mysqli_connect('localhost:3307', 'root', '', 'naman');
 
 // REGISTER INVESTER
 if (isset($_POST['reg_inv'])) {
