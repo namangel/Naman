@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307:3307
--- Generation Time: Dec 18, 2018 at 08:45 AM
+-- Generation Time: Dec 18, 2018 at 08:55 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.0.31
 
@@ -51,21 +51,17 @@ CREATE TABLE `inv_overview` (
   `FBLink` varchar(50) DEFAULT NULL,
   `TwitterLink` varchar(50) DEFAULT NULL,
   `LinkedIn` varchar(50) DEFAULT NULL,
-  `Summary` varchar(500) DEFAULT NULL,
-  `GrpName` text,
-  `GrpDesignation` text,
-  `GrpExperience` varchar(50) DEFAULT NULL,
-  `PIName` varchar(50) DEFAULT NULL,
-  `PIUrl` varchar(50) DEFAULT NULL
+  `Summary` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `inv_overview`
 --
 
-INSERT INTO `inv_overview` (`Username`, `ProfileImage`, `IndustryOfInterest`, `BasedIn`, `TotalStartupFunded`, `RecentFunding`, `FBLink`, `TwitterLink`, `LinkedIn`, `Summary`, `GrpName`, `GrpDesignation`, `GrpExperience`, `PIName`, `PIUrl`) VALUES
-('pqr123', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('aayooush', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `inv_overview` (`Username`, `ProfileImage`, `IndustryOfInterest`, `BasedIn`, `TotalStartupFunded`, `RecentFunding`, `FBLink`, `TwitterLink`, `LinkedIn`, `Summary`) VALUES
+('pqr123', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('aayooush', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('aaa', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -154,7 +150,8 @@ CREATE TABLE `user_inv` (
 --
 
 INSERT INTO `user_inv` (`ID`, `Cname`, `Fname`, `Lname`, `Email`, `Country`, `State`, `City`, `Website`, `Avg`, `Username`, `Phone`, `Password`) VALUES
-(4, 'ABC', 'Aayush', 'Singh', 'abc@gmail.com', 'IN', 'Mah', 'Mum', 'abc.in', '2', 'abc123', '8169163192', '7c222fb2927d828af22f592134e8932480637c0d');
+(4, 'ABC', 'Aayush', 'Singh', 'abc@gmail.com', 'IN', 'Mah', 'Mum', 'abc.in', '2', 'abc123', '8169163192', '7c222fb2927d828af22f592134e8932480637c0d'),
+(5, 'aa', 'aaa', 'sdegtyr', 'aaa@gmail.com', 'IN', 'mah', 'mum', 'www.aaa.com', '12', 'aaa', '9876543211', '2be5c6d2423b931a603b52e8ba42a1d2be795a5a');
 
 -- --------------------------------------------------------
 
@@ -212,7 +209,7 @@ ALTER TABLE `user_st`
 -- AUTO_INCREMENT for table `user_inv`
 --
 ALTER TABLE `user_inv`
-  MODIFY `ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user_st`
