@@ -21,7 +21,7 @@
         <div  class="dropdown" style="float: right;">
             <button class="dropbtn">Entrepreneur</button>
             <div class="dropdown-content">
-                <a href="#">Profile</a>
+                <a href="Profile-StartUP-DB-Overview.php">Profile</a>
                 <a href="#">Account settings</a>
                 <a href="index.php">Sign out</a>
             </div>
