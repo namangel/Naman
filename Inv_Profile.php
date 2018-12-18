@@ -17,7 +17,7 @@
     $qu = "SELECT * FROM inv_overview WHERE Username='$u'";
     $results = mysqli_query($db, $qu);
     $row = mysqli_fetch_assoc($results);
-    $img=$row['ProfileImage'];
+    $img = $row['ProfileImage'];
     $indOfInt=$row['IndustryOfInterest'];
     $summary=$row['Summary'];
 
@@ -68,7 +68,7 @@
 		}
 		header('location: Inv_Profile.php');
     }
-    
+
     if(isset($_POST["upload"]))
 	{
         $check = getimagesize($_FILES["profpic"]["tmp_name"]);
@@ -87,7 +87,7 @@
 	{
 		$ioi = mysqli_real_escape_string($db, $_POST['ioi']);
         $ovw = mysqli_real_escape_string($db, $_POST['ovw']);
-        
+
 		if($ioi != NULL)
 		{
 			$q = "UPDATE inv_overview set IndustryOfInterest ='$ioi' where Username='$u'";
@@ -116,14 +116,14 @@
             <div>
                 <div class="pic"><?= '<img src="data:image/jpeg;base64,'.base64_encode($img).'"/>';?></div>
                 <div class="imgupload">
-                    <form method="post" action="Inv_Profile.php">
+                    <form method="post" action="Inv_Profile.php" enctype="multipart/form-data">
                         <input name="profpic" type="file">
                         <input type="submit" name="upload" value="Upload">
                     </form>
                 </div>
             </div>
             <div class="social">
-                <button class="butn" onclick="on()">Social Links</button>                
+                <button class="butn" onclick="on()">Social Links</button>
             </div>
             <div class="detail">
                 <div class="name"><?= $fname." ".$lname?></div>
@@ -204,8 +204,8 @@
             <div class="inp">
             <label>Website:</label>
             <input type="text" name="updwebsite" value="<?php echo $website; ?>">
-            </div>    
-            <input type="submit" name="editsubmit" class="butn">      
+            </div>
+            <input type="submit" name="editsubmit" class="butn">
         </form>
     </div>
 </body>
