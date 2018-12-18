@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 18, 2018 at 07:57 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.10
+-- Host: 127.0.0.1:3307:3307
+-- Generation Time: Dec 18, 2018 at 08:45 AM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.0.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,12 +25,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `inv_group`
+--
+
+CREATE TABLE `inv_group` (
+  `Username` varchar(100) NOT NULL,
+  `GrpName` varchar(50) NOT NULL,
+  `GrpDesignation` text NOT NULL,
+  `GrpExperience` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `inv_overview`
 --
 
 CREATE TABLE `inv_overview` (
   `Username` varchar(100) NOT NULL,
-  `Image` longblob NOT NULL,
+  `ProfileImage` longblob NOT NULL,
   `IndustryOfInterest` text,
   `BasedIn` text,
   `TotalStartupFunded` int(10) DEFAULT NULL,
@@ -50,9 +63,22 @@ CREATE TABLE `inv_overview` (
 -- Dumping data for table `inv_overview`
 --
 
-INSERT INTO `inv_overview` (`Username`, `Image`, `IndustryOfInterest`, `BasedIn`, `TotalStartupFunded`, `RecentFunding`, `FBLink`, `TwitterLink`, `LinkedIn`, `Summary`, `GrpName`, `GrpDesignation`, `GrpExperience`, `PIName`, `PIUrl`) VALUES
+INSERT INTO `inv_overview` (`Username`, `ProfileImage`, `IndustryOfInterest`, `BasedIn`, `TotalStartupFunded`, `RecentFunding`, `FBLink`, `TwitterLink`, `LinkedIn`, `Summary`, `GrpName`, `GrpDesignation`, `GrpExperience`, `PIName`, `PIUrl`) VALUES
 ('pqr123', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 ('aayooush', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `inv_previnvestment`
+--
+
+CREATE TABLE `inv_previnvestment` (
+  `Username` varchar(100) NOT NULL,
+  `PIName` varchar(50) NOT NULL,
+  `PIYear` year(4) NOT NULL,
+  `PIStage` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 

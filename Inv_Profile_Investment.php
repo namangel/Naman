@@ -159,7 +159,7 @@
                         <input type="submit" value="Add" name="invsubmit" class="butn" style="margin-left:50px;">&nbsp;&nbsp;
                         <input type="submit" value="Remove" name="invremove" class="butn">
                     </center> 
-                        <p style="float:right; font-size:9pt; color:gray;">Fill all details to add a group and only the name to remove corresponding investment.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>         
+                        <p style="float:right; font-size:9pt; color:gray;">Fill all details to add an investment and only the name to remove corresponding investment.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>         
                 </form>
                 <br><br><br><br>
                 <table>

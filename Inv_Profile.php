@@ -17,7 +17,7 @@
     $qu = "SELECT * FROM inv_overview WHERE Username='$u'";
     $results = mysqli_query($db, $qu);
     $row = mysqli_fetch_assoc($results);
-    $img=$row['Image'];
+    $img=$row['ProfileImage'];
     $indOfInt=$row['IndustryOfInterest'];
     $summary=$row['Summary'];
 
@@ -69,16 +69,20 @@
 		header('location: Inv_Profile.php');
     }
     
-    // $check = getimagesize($_FILES["profpic"]["tmp_name"]);
-    // if($check !== false)
-    // {
-	// 	$image = $_FILES['profpic']['tmp_name'];
-    //     $imgContent = addslashes(file_get_contents($image));
+    if(isset($_POST["upload"]))
+	{
+        $check = getimagesize($_FILES["profpic"]["tmp_name"]);
+        if($check !== false)
+        {
+            $image = $_FILES['profpic']['tmp_name'];
+            $imgContent = addslashes(file_get_contents($image));
 
-	// 	$q = "UPDATE inv_overview set Image='$imgContent' where Username='$u';";
-	// 	mysqli_query($db, $q);
-    // }
-    
+            $q = "UPDATE inv_overview set ProfileImage='$imgContent' where Username='$u';";
+            mysqli_query($db, $q);
+        }
+        header('location: Inv_Profile.php');
+    }
+
     if(isset($_POST["summarysubmit"]))
 	{
 		$ioi = mysqli_real_escape_string($db, $_POST['ioi']);
@@ -109,9 +113,14 @@
 <body>
     <div class="profbody">
         <div class="banner">
-            <div class="pic">
-                <!-- make form with i/p type file -->
-                <!-- <?= '<img src="data:image/jpeg;base64,'.base64_encode($image).'"/>';?> -->
+            <div>
+                <div class="pic"><?= '<img src="data:image/jpeg;base64,'.base64_encode($img).'"/>';?></div>
+                <div class="imgupload">
+                    <form method="post" action="Inv_Profile.php">
+                        <input name="profpic" type="file">
+                        <input type="submit" name="upload" value="Upload">
+                    </form>
+                </div>
             </div>
             <div class="social">
                 <button class="butn" onclick="on()">Social Links</button>                
