@@ -38,7 +38,7 @@
         }
 		header('location: Inv_Profile_Group.php');
     }
-    
+
 
     if(isset($_POST["editsubmit"]))
 	{
@@ -63,14 +63,14 @@
 		}
 		header('location: Inv_Profile_Group.php');
     }
-    
+
 
     if(isset($_POST["grpsubmit"]))
 	{
 		$grpname = mysqli_real_escape_string($db, $_POST['grpName']);
         $grpdesig = mysqli_real_escape_string($db, $_POST['grpDesig']);
         $grpexp = mysqli_real_escape_string($db, $_POST['grpExp']);
-        
+
 		if($grpname != NULL and $grpexp != NULL and $grpdesig != NULL)
 		{
 			$q = "INSERT INTO inv_group  VALUES ('$u','$grpname','$grpdesig','$grpexp');";
@@ -82,7 +82,7 @@
     if(isset($_POST["grpremove"]))
 	{
 		$grpname = mysqli_real_escape_string($db, $_POST['grpName']);
-        
+
 		if($grpname != NULL)
 		{
 			$q = "DELETE FROM inv_group WHERE Username='$u' AND GrpName='$grpname';";
@@ -106,7 +106,7 @@
         <div class="banner">
             <div class="pic"></div>
             <div class="social">
-                <button class="butn" onclick="on()">Add Social Links</button>                
+                <button class="butn" onclick="on()">Add Social Links</button>
             </div>
             <div class="detail">
                 <div class="name"><?= $fname." ".$lname?></div>
@@ -164,10 +164,10 @@
                     <td>Designation &nbsp;</td>
                     <td>Experience &nbsp;</td>
                 </tr>
-                <?php 
-                $qu = "SELECT * FROM user_inv WHERE Username='$u'";
+                <?php
+                $qu = "SELECT * FROM inv_group WHERE Username='$u'";
                 $results = mysqli_query($db, $qu);
-                while($row= mysqli_fetch_assoc($results))
+                while($row = mysqli_fetch_assoc($results))
                 {
                     $grpname=$row['GrpName'];
                     $grpdesig=$row['GrpDesignation'];
@@ -184,7 +184,7 @@
         </div>
     </div>
 
-    <div id="links"">
+    <div id="links">
             <form class="ovform" method="post">
                 <i class="fa fa-window-close" onclick="off()" style="float:right;"></i>
                 <div class="inp">
@@ -216,8 +216,8 @@
             <div class="inp">
             <label>Website:</label>
             <input type="text" name="updwebsite" value="<?php echo $website; ?>">
-            </div>    
-            <input type="submit" name="editsubmit" class="butn">      
+            </div>
+            <input type="submit" name="editsubmit" class="butn">
         </form>
     </div>
 </body>
