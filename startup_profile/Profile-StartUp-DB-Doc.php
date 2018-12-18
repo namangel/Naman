@@ -1,5 +1,4 @@
-<?php
-	require 'server.php';
+<?php require('../server.php');
 	// $_SESSION['username'] = 'xyz123';//predefine -- nikalo mujhe
 	$u = $_SESSION['username'];
 
@@ -254,12 +253,12 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css\companyprof.css" type="text/css">
-        <script src="js\profform.js"></script>
+        <link rel="stylesheet" href="../css/companyprof.css" type="text/css">
+        <script src="../js/profform.js"></script>
     </head>
     <body>
         <div class="container">
-			<?php require 'include/header/postlogin.php'; ?>
+			<?php require('../include/header/postlogin1.php'); ?>
             <div class="main">
             	<div class="backimg">
                     <font style="font-size:30px;"><?= $Stname?></font>
@@ -474,7 +473,6 @@
 						</div>
 				</div>
     		</div>
-			<?php include 'include/footer/footer.php'; ?>
-        </div>
+  <?php require "../include/footer/footer.php" ?>        </div>
     </body>
 </html>

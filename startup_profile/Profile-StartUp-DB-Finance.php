@@ -1,5 +1,5 @@
 <?php
-	require 'server.php';
+	require('../server.php');
 	// $_SESSION['username'] = 'xyz123';//predefine -- nikalo mujhe
 	$u = $_SESSION['username'];
 
@@ -108,7 +108,7 @@
 			mysqli_query($db, $q);
 		}
 
-		header('location: StartUp-DB-Overview.php');
+		header('location: StartUp-DB.php');
 	}
 
 	if(isset($_POST["sfsave"])){
@@ -131,7 +131,7 @@
 			$q = "UPDATE st_overview set FBLink='$sffacebook' where Username='$u';";
 			mysqli_query($db, $q);
 		}
-		header('location: StartUp-DB-Overview.php');
+		header('location: ../StartUp-DB.php');
 	}
 
 	if(isset($_POST["cfsave"])){
@@ -148,7 +148,7 @@
 			$q = "UPDATE user_st set Email='$cfemail' where Username='$u';";
 			mysqli_query($db, $q);
 		}
-		header('location: StartUp-DB-Overview.php');
+		header('location: ../StartUp-DB.php');
 	}
 
 	if(isset($_POST['sumsave'])){
@@ -156,7 +156,7 @@
 		$q = "UPDATE st_overview set Summary='$summaryform' where Username='$u';";
 		mysqli_query($db, $q);
 
-		header('location: StartUp-DB-Overview.php');
+		header('location: ../StartUp-DB.php');
 	}
 
 	if(isset($_POST['casave'])){
@@ -173,7 +173,7 @@
 			mysqli_query($db, $q);
 		}
 
-		header('location: StartUp-DB-Overview.php');
+		header('location: ../StartUp-DB.php');
 	}
 
 	if(isset($_POST['pisave'])){
@@ -190,7 +190,7 @@
 			mysqli_query($db, $q);
 		}
 
-		header('location: StartUp-DB-Overview.php');
+		header('location: ../StartUp-DB.php');
 	}
 
 	if(isset($_POST['olpsave'])){
@@ -201,7 +201,7 @@
 			mysqli_query($db, $q);
 		}
 
-		header('location: StartUp-DB-Overview.php');
+		header('location: ../StartUp-DB.php');
 	}
 
 
@@ -232,37 +232,38 @@
  //FOR Requests
  	if(isset($_POST['req0'])){
 		$_SESSION['search'] = $rid[0];
-		header('location: Investor-Profile.php');
+		header('location: ../Investor-Profile.php');
 	}
 	if(isset($_POST['req1'])){
 		$_SESSION['search'] = $rid[1];
-		header('location: Investor-Profile.php');
+		header('location: ../Investor-Profile.php');
 	}
 	if(isset($_POST['req2'])){
 		$_SESSION['search'] = $rid[2];
-		header('location: Investor-Profile.php');
+		header('location: ../Investor-Profile.php');
 	}
 	if(isset($_POST['req3'])){
 		$_SESSION['search'] = $rid[3];
-		header('location: Investor-Profile.php');
+		header('location: ../Investor-Profile.php');
 	}
 	if(isset($_POST['req4'])){
 		$_SESSION['search'] = $rid[4];
-		header('location: Investor-Profile.php');
+		header('location: ../Investor-Profile.php');
 	}
 ?>
 <html>
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css\companyprof.css" type="text/css">
-        <script src="js\profform.js"></script>
+        <link rel="stylesheet" href="../css/companyprof.css" type="text/css">
+        <link rel="stylesheet" href="../css/financial.css" type="text/css">
+        <script src="../js/profform.js"></script>
     </head>
     <body>
         <div class="container">
-        <?php require 'include/header/postlogin.php'; ?>
+		<?php require '../include/header/postlogin1.php'; ?>
             <div class="main">
-            		<div class="backimg">
-                        <font style="font-size:30px;"><?= $Stname?></font>
+                <div class="backimg">
+                    <font style="font-size:30px;"><?= $Stname?></font>
                 </div>
                 <div class="sideprof">
                     <div class="upload">
@@ -332,7 +333,7 @@
                 </div>
                 <div id="overlay">
                     <div class="compbasics">
-                        <form class="profform" method="post" action='StartUp-DB-Overview.php' enctype="multipart/form-data">
+                        <form class="profform" method="post" action='StartUp-DB.php' enctype="multipart/form-data">
                             <button class="close" onclick="off()"><i class="fa fa-close"></i></button>
                             <div class="i1">
                                 <h2>Company Basics</h2>
@@ -406,211 +407,96 @@
                         </form>
                     </div>
                 </div>
-                <div class="nav">
-                    <div><a href="Profile-StartUp-DB-Overview.php" style="color:black;">Overview</a></div>
-                    <div><a href="Profile-StartUp-DB-Exec.php">Executive summary</a></div>
-                    <div><a href="Profile-StartUp-DB-Finance.php">Financials</a></div>
-                    <div><a href="Profile-StartUp-DB-Doc.php">Documents</a></div>
-                </div>
-                <div class="summary">
-                    <div class="databox">
-                        <h3>Company Summary</h3>
-                        <p>Tell the world who you are and what makes your company special.</p>
-                        <img src="img\Capture.png">
-                    </div>
-                    <div class="databox" style="padding:10px;">
-                        <label>Increase the impact of your profile by uploading a short pitch</label>
-                        <br>
-                    </div>
-                    <div class="databox">
-                        <!-- <button onclick="teamon()" class="pencil"><i class="fa fa-pencil"></i></button> -->
-                        <h4>Team</h4>
-                        <img src="img\prof.png">
-                        <hr>
-                    </div>
-                    <div class="databox">
-                        <h4>Advisors</h4>
-                        <img src="img\prof.png">
-                        <hr>
-                    </div>
-                    <div class="databox">
-                        <h4>Previous Investors</h4>
-                        <img src="img\prof.png">
-                        <hr>
-                    </div>
-                </div>
-                <div id="sumformov">
-                    <div class="form">
-                        <div class="formhead">
-                            <button onclick="summoff()" class="close"><i class="fa fa-close"></i></button>
-                            <h3>Comapany Summary</h3>
-                            <p>Add an overview to help investors evaluate your startup. You might like to include your business model, structure and products/services.</p>
-                        </div>
-                        <div class="formtext">
-                            <form>
-                                <div class="formtext"><textarea rows="10" cols="150" name="summmaryform"></textarea></div>
-                                <div class="formtext submits">
-                                    <input type="submit" value="Cancel" name="cancel" class="cancel">
-                                    <input type="submit" value="Save" name="save" class="save">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div id="socialformov">
-                    <div class="form">
-                        <div class="formhead">
-                            <button onclick="socialoff()" class="close"><i class="fa fa-close"></i></button>
-                            <h3>Social Presence</h3>
-                            <p>Add your company's social media links.</p>
-                        </div>
-                        <div class="formtext">
-                            <form>
-                                <div class="socialic"><i class="fa fa-linkedin"><input type="text" size="30"></i></div>
-                                <div class="socialic"><i class="fa fa-twitter"><input type="text" size="30"></i></div>
-                                <div class="socialic"><i class="fa fa-facebook"> <input type="text" size="30"></i></div>
-                                <br>
-                                <div class="formtext submits">
-                                        <input type="submit" value="Cancel" name="cancel" class="cancel">
-                                        <input type="submit" value="Save" name="save" class="save">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div id="contactform">
-                    <form class="form">
-                        <div class="formhead">
-                            <button onclick="contactoff()" class="close"><i class="fa fa-close"></i></button>
-                            <h3>Contact Information</h3>
-                            <p>Provide contact information for your company.</p>
-                        </div>
-                        <div class="formtext">
-                                <label for="phone">Phone Number</label>
-                                <br>
-                                <input type="text" name="phone"  size="40">
-                                <br>
-                                <label for="email">Email</label>
-                                <br>
-                                <input type="text" name="email" size="40">
-                                <br>
-                                <label for="loc">Location</label>
-                                <br>
-                                <input type="text" name="loc"  size="40">
-                                <br>
-                                <br>
-                            <div class="formtext submits">
-                                    <input type="submit" value="Cancel" name="cancel" class="cancel">
-                                    <input type="submit" value="Save" name="save" class="save">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div id="profteam">
-                    <div class="form">
-                        <div class="formhead">
-                            <button onclick="teamoff()" class="close"><i class="fa fa-close"></i></button>
-                            <h3>Team</h3>
-                        </div>
-                        <div class="formtext">
-                            <form>
-                                    <label for="owner">Name (Profile Owner) </label>
-                                    <br>
-                                    <input type="text" name="owner">
-                                    <br>
-                                    <label for="pos">Position </label>
-                                    <br>
-                                    <input type="text" name="pos">
-                                    <br>
-                                    <label for="exp">Experience and Expertise </label>
-                                    <br>
-                                    <textarea name="pos" rows="10" cols="3"></textarea>
-                            </form>
-                            <div class="formtext submits">
-                                    <input type="submit" value="Cancel" name="cancel" class="cancel">
-                                    <input type="submit" value="Save" name="save" class="save">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="addteam">
-                        <div class="form">
-                            <div class="formhead">
-                                <button onclick="addteamoff()" class="close"><i class="fa fa-close"></i></button>
-                                <h3>Add a Team Member</h3>
-                                <p>Your team is one of the most influential factors driving investor interest. If your team’s information is incomplete, you could be limiting your investment potential.</p>
-                                <p class="icsize">Remember to split equity before applying for funding. Divide ownership fairly and easily with our free Co-founder Equity Split tool.</p>
-                            </div>
-                            <div class="formtext">
-                                <form>
-                                    <div class="formtext">
-                                        <label>Name</label><br>
-                                        <input type="text" size="50"><br><br>
-                                        <label>Phone Number</label><br>
-                                        <input type="text" size="50"><br><br>
-                                        <label>Experience and Expertise</label><br>
-                                        <textarea rows="10" cols="150" name="exp"></textarea><br><br>
-                                        <label>Email</label><br>
-                                        <input type="text" size="50"><br><br>
-                                        <input type="checkbox">Can manage my Company Profile <br><br>
-                                        <p class="icsize">Allow this team member to edit the Company Profile. Note: only the Account Owner can apply to investor groups.</p>
-                                    </div>
-                                    <div class="formtext submits">
-                                        <input type="submit" value="Cancel" name="cancel" class="cancel">
-                                        <input type="submit" value="Save" name="save" class="save">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                </div>
-                <div id="adv">
-                        <div class="form">
-                            <div class="formhead">
-                                <button onclick="advoff()" class="close"><i class="fa fa-close"></i></button>
-                                <h3>Add a Company Advisor</h3>
-                                <p class="icsize">Please provide the name and email address of your company advisor. Once they have confirmed their role, they'll gain access to your private profile. View our privacy policy</p>
-                            </div>
-                            <div class="formtext">
-                                <form>
-                                    <div class="formtext">
-                                        <label>Name</label><br>
-                                        <input type="text" size="50"><br><br>
-                                        <label>Email</label><br>
-                                        <input type="text" size="50"><br><br>
-                                    </div>
-                                    <div class="formtext submits">
-                                        <input type="submit" value="Cancel" name="cancel" class="cancel">
-                                        <input type="submit" value="Save" name="save" class="save">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                </div>
-                <div id="inv">
-                        <div class="form">
-                            <div class="formhead">
-                                <button onclick="invoff()" class="close"><i class="fa fa-close"></i></button>
-                                <h3>Add a Previous Investor</h3>
-                                <p class="icsize">Please provide the name and email address of a previous investor. Once they have confirmed their role, they'll gain access to your private profile. View our privacy policy</p>
-                            </div>
-                            <div class="formtext">
-                                <form>
-                                    <div class="formtext">
-                                        <label>Name</label><br>
-                                        <input type="text" size="50"><br><br>
-                                        <label>Email</label><br>
-                                        <input type="text" size="50"><br><br>
-                                    </div>
-                                    <div class="formtext submits">
-                                        <input type="submit" value="Cancel" name="cancel" class="cancel">
-                                        <input type="submit" value="Save" name="save" class="save">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                </div>
+								<div class="nav">
+									<div><a href="Profile-StartUp-DB-Overview.php">Overview</a></div>
+									<div><a href="Profile-StartUp-DB-Exec.php">Executive summary</a></div>
+									<div><a href="Profile-StartUp-DB-Finance.php" style="color:black;">Financials</a></div>
+									<div><a href="Profile-StartUp-DB-Doc.php">Documents</a></div>
+								</div>
+								<div id="socialformov">
+											<div class="form">
+												<div class="formhead">
+													<button class="close" onclick="socialoff()"><i class="fa fa-close"></i></button>
+													<h3>Social Presence</h3>
+													<p>Add your company's social media links.</p>
+												</div>
+												<div class="formtext">
+													<form method="post">
+														<div class="socialic">
+															<i class="fa fa-linkedin"></i><input size="30" type="text" name="sflinkedin">
+														</div>
+														<div class="socialic">
+															<i class="fa fa-twitter"></i><input size="30" type="text" name="sftwitter">
+														</div>
+														<div class="socialic">
+															<i class="fa fa-facebook"></i><input size="30" type="text" name="sffacebook">
+														</div><br>
+														<div class="formtext submits">
+															<input class="cancel" name="cancel" type="submit" value="Cancel"> <input class="save" name="sfsave" type="submit" value="Save">
+														</div>
+													</form>
+												</div>
+											</div>
+								</div>
+								<div id="contactform">
+									<form class="form" method="post">
+										<div class="formhead">
+											<button class="close" onclick="contactoff()"><i class="fa fa-close"></i></button>
+											<h3>Contact Information</h3>
+											<p>Provide contact information for your company.</p>
+										</div>
+										<div class="formtext">
+											<label for="cfphone">Phone Number</label><br>
+											<input name="cfphone" size="40" type="text"><br>
+											<label for="cfemail">Email</label><br>
+											<input name="cfemail" size="40" type="email"><br>
+											<br>
+											<div class="formtext submits">
+												<input class="cancel" name="cancel" type="submit" value="Cancel"> <input class="save" name="cfsave" type="submit" value="Save">
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="summary">
+									<center><i class="fa fa-lock icsize">Only NamanAngels users who have been granted access can view this content.</i></center>
+									<div class="databox">
+										<h3>Current Funding Round (USD)</h3>
+										  Detail your stage of funding, the capital you're seeking and your pre-money valuation.<br><br>
+									</div>
+									<div class="databox">
+										<h3>Funding History (USD)</h3><br>
+										  Please add any previous funding rounds.
+									</div>
+									<div class="databox">
+										<h3>Annual Financials (USD)</h3>
+										<div class="p2">
+										</div>
+										<p>Enter your financials for this year and last year, as well as projections for the following three years.</p>
+										<p>Investors like to compare and evaluate financial performance over this timeframe, so do your best to complete it.</p>
+									</div>
+									<div class="databox">
+										<pre>Annual Revenue Run Rate --                        Monthly Burn Rate --<pre>
+											<table>
+											  <tr>
+												<td>         </td>
+											  </tr>
+											  <tr>
+												<td>Revenue Driver</td>
+											  </tr>
+											  <tr>
+												<td>Revenue $</td>
+											  </tr>
+											  <tr>
+												<td>Expenditure $</td>
+											  </tr>
+											  <tr>
+												<td>Profit (Loss) $</td>
+											  </tr>
+											</table>
+									</div>
+								</div>
             </div>
-            <?php require "include/footer/footer.php" ?>
+			<?php require "../include/footer/footer.php" ?>
         </div>
 
     </body>
